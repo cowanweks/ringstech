@@ -1,6 +1,8 @@
 import "@styles/Mobile.scss"
 import ItemCard from "@components/itemcard/ItemCard"
-
+import Image1 from "@assets/phones/nonshop_violet.webp"
+import Image2 from "@assets/phones/nonshop_gray.webp"
+import { NavLink } from "react-router-dom"
 export default function Mobiles() {
 
 
@@ -19,14 +21,14 @@ export default function Mobiles() {
 			</div>
 
 			<div className="h-[80%] flex justify-center">
-				<ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-				<ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-				<ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-				<ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
 			</div>
 			<div className="flex items-center justify-center">
-				<a href="/shop" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
-				hover:bg-white hover:border-blue-500">LOAD MORE PRODUCTS</a>
+				<NavLink to="/shop" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
+				hover:bg-white hover:border-blue-500">LOAD MORE PRODUCTS</NavLink>
 			</div>
 		</section>
 	)

@@ -8,7 +8,8 @@ import {
   PaginationPrevious, PaginationLink, PaginationEllipsis
 } from '@shadcn-ui/pagination'
 import { Button } from '@shadcn-ui/button'
-
+import Image1 from "@assets/phones/nonshop_violet.webp"
+import Image2 from "@assets/phones/nonshop_gray.webp"
 
 export default function Shop() {
 
@@ -33,12 +34,15 @@ export default function Shop() {
           </div>
 
           <div className="flex flex-wrap">
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="My product" price={50.00} image="https://via.placeholder.com/300x200" description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
           </div>
           <div className="pt-2 pb-2">
             <Pagination>
