@@ -1,0 +1,9 @@
+#Mobiles {
+	min-height: calc(100dvh - 49px);
+
+	& ul li {}
+
+	& ul li a {
+		text-decoration: none;
+	}
+}

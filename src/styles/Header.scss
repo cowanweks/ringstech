@@ -1,0 +1,30 @@
+#Header {
+
+	& .welcome {
+		border-bottom: 1px solid #ddd;
+	}
+
+	& #NavBar {
+		border-bottom: 1px solid #ddd;
+
+		& .navs .nav_item {}
+
+		& .navs .nav_item a {
+			text-decoration: none;
+		}
+
+		& .navs .nav_item:hover {
+			color: #ff7701;
+		}
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}

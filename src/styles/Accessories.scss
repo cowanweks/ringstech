@@ -1,0 +1,28 @@
+#Accessories {
+	min-height: calc(100dvh - 47px);
+
+	& div a {
+		text-decoration: none;
+	}
+
+	& ul li {
+		position: relative;
+	}
+
+	& ul li a {
+		text-decoration: none;
+	}
+
+	& ul li::before {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		content: '';
+		height: 40px;
+		width: 100%;
+	}
+
+	& ul li:hover+ ::before {
+		// background: #ff7701;
+	}
+}
