@@ -13,7 +13,7 @@
 			text-decoration: none;
 		}
 
-		& .navs .nav_item:hover {
+		& .navs .nav_item:hover > a {
 			color: #ff7701;
 		}
 	}

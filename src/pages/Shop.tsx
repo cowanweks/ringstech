@@ -22,7 +22,7 @@ export default function Shop() {
 
         <div className="items flex flex-col py-8">
 
-          <div id='search_input' className="px-6">
+          {/*<div id='search_input' className="px-6">
             <span className='flex'>
               <input type='search' className='h-[32px] px-2' />
               <Button className='h-10 bg-red-700'>
@@ -31,7 +31,7 @@ export default function Shop() {
                 </svg>
               </Button>
             </span>
-          </div>
+          </div>*/}
 
           <div className="flex flex-wrap">
             <ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
