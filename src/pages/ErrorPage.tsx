@@ -10,7 +10,7 @@ interface ErrorPageProps {
 export default function NotFound(props: ErrorPageProps) {
 
   return (
-    <div class="error-page" id='NotFound'>
+    <div className="error-page" id='NotFound'>
       {props.errorCode} Not Found
     </div>)
 }
