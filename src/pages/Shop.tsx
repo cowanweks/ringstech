@@ -7,7 +7,7 @@ import {
   Pagination, PaginationContent, PaginationItem, PaginationNext,
   PaginationPrevious, PaginationLink, PaginationEllipsis
 } from '@shadcn-ui/pagination'
-import { Button } from '@shadcn-ui/button'
+// import { Button } from '@shadcn-ui/button'
 import Image1 from "@assets/phones/nonshop_violet.webp"
 import Image2 from "@assets/phones/nonshop_gray.webp"
 

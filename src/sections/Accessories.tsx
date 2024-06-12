@@ -2,7 +2,7 @@ import "@styles/Accessories.scss"
 import ItemCard from "@components/itemcard/ItemCard"
 import Image1 from "@assets/accessories/africa-en-silicone-cover-with-s-pen-galaxy-s21-ultra-5g-ef-pg99ptbegww-384115466.avif"
 import { NavLink } from "react-router-dom"
-import { Button } from "@shadcn-ui/button"
+// import { Button } from "@shadcn-ui/button"
 
 export default function Accessories() {
 
