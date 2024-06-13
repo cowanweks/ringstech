@@ -47,7 +47,7 @@ function CartItem() {
 
 
 
-export default function Cart(props: {items: Array<{}>}) {
+export default function Cart() {
 
   return (
     <div id='Cart' className="">
