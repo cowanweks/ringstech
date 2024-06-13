@@ -1,10 +1,14 @@
 import "@styles/Mobile.scss"
 import ItemCard from "@components/itemcard/ItemCard"
-import Image1 from "@assets/phones/nonshop_violet.webp"
-import Image2 from "@assets/phones/nonshop_gray.webp"
 import { NavLink } from "react-router-dom"
-export default function Mobiles() {
 
+//
+import Image1 from "@assets/phones/image1.jpg"
+import Image2 from "@assets/phones/image2.jpg"
+import Image3 from "@assets/phones/Image3.jpg"
+import Image4 from "@assets/phones/image4.jpg"
+
+export default function Mobiles() {
 
 	return (
 		<section id="Mobiles" className="">
@@ -12,18 +16,25 @@ export default function Mobiles() {
 				<h1 className="font-bold text-lg">MOBILES</h1>
 
 				<ul className="flex font-medium  gap-x-6">
-					<li className="text-black my-0 leading-10">All PHONES</li>
-					<li className="my-0 leading-10"><a href="">MI PHONES</a></li>
-					<li className="my-0 leading-10"><a href="">POCO PHONES</a></li>
-					<li className="my-0 leading-10"><a href="">REDMI PHONES</a></li>
-					<li className="my-0 leading-10"><a href="">TOP SELLERS</a></li>
+					<li className="text-black cursor-pointer hover:text-[#000] my-0 leading-10">
+						<NavLink to="">All PHONES</NavLink>
+					</li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY NOTE PHONES</NavLink></li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY S PHONES</NavLink></li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY FOLD PHONES</NavLink></li>
 				</ul>
 			</div>
 
-			<div className="h-[80%] flex justify-center">
+			<div className="mobiles grid grid-cols-4">
 				<ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image3} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image4} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image4} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
 			</div>
 			<div className="flex items-center justify-center">

@@ -17,7 +17,7 @@ export default function Carousel(props: { slides: Array<{image: string, caption:
         <div className="carousel">
             {props.slides.map((slide, index) => (
                 <div key={index} className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}>
-                    <img src={slide.image} alt={`Slide ${index + 1}`} />
+                    <img src={slide.image} alt={`Slide ${index + 1}`} className=''/>
                     <div className="carousel-caption">{slide.caption}</div>
                 </div>
             ))}

@@ -13,17 +13,21 @@ export default function Accessories() {
 				<h1 className="font-bold text-lg">ACCESSORIES</h1>
 
 				<ul className="flex font-medium gap-x-6">
-					<li className="text-black cursor-pointer">
-						<a href="">ALL ACCESSORIES</a>
+					<li className="text-black cursor-pointer hover:text-[#000]">
+						<NavLink to="">ALL ACCESSORIES</NavLink>
 					</li>
-					<li className="cursor-pointer"><a href="">GEARS & DEVICES</a></li>
-					<li className="cursor-pointer"><a href="">AUDIO</a></li>
-					<li className="cursor-pointer"><a href="">CAMERA & VISUAL</a></li>
-					<li className="cursor-pointer"><a href="">POWERBANK & CHARGING</a></li>
+					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">GEARS & DEVICES</NavLink></li>
+					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">AUDIO</NavLink></li>
+					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">CAMERA & VISUAL</NavLink></li>
+					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">POWERBANK & CHARGING</NavLink></li>
 				</ul>
 			</div>
 
-			<div className="h-[80%] flex justify-center">
+			<div className="grid grid-cols-4">
+				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
+				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
 				<ItemCard title="Galaxy S21 Ultra 5G Silicone Cover with S Pen" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />

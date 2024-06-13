@@ -1,3 +1,4 @@
+import { Button } from "@shadcn-ui/button"
 import "@styles/ItemCard.scss"
 
 
@@ -10,7 +11,7 @@ export default function ItemCard(props: { title: string, description: string, pr
 			<h2 className="product-title text-slate-800">{props.title}</h2>
 			<p className="product-description">{props.description}</p>
 			<p className="product-price">Kshs {props.price}</p>
-			<button className="product-button">Add to Cart</button>
+			<Button className="product-button">Add to Cart</Button>
 		</div>
 	</div>
 }

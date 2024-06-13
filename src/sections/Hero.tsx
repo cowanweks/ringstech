@@ -1,8 +1,12 @@
 import "@styles/Hero.scss";
 import Carousel from "@components/carousel/Carousel";
-import Image1 from "@assets/galaxy-tab-s9-kv-pc.jpg"
+
+
+// Images
+import Image1 from "@assets/slides/slide1.jpg"
 import Image2 from "@assets/black-friday-concept-with-smartphone-cart-board_23-2147695916.avif"
 import Image3 from "@assets/HOME_E3_MX-KV_1440x810_pc.avif"
+import Image4 from "@assets/accessories/GM9n9u9W8AAX2l9.jpeg"
 
 const slides = [
   {
@@ -16,6 +20,10 @@ const slides = [
   {
     image: Image3,
     caption: "Caption for Slide 3"
+  },
+  {
+    image: Image4,
+    caption: "Caption for Slide 4"
   }
 ];
 
