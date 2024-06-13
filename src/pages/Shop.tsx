@@ -36,22 +36,22 @@ export default function Shop() {
           <Pagination className='h-16 py-16'>
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious href="#" className='text-black' />
+                <PaginationPrevious href="#" className='text-[#c5c6c7]' />
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className='bg-[#ff7701] text-white'>1</PaginationLink>
+                <PaginationLink href="#" className='bg-[#ff7701] text-[#c5c6c7]'>1</PaginationLink>
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className=' text-black'>2</PaginationLink>
+                <PaginationLink href="#" className='text-[#c5c6c7]'>2</PaginationLink>
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className='text-black'>3</PaginationLink>
+                <PaginationLink href="#" className='text-[#c5c6c7]'>3</PaginationLink>
               </PaginationItem>
               <PaginationItem>
                 <PaginationEllipsis />
               </PaginationItem>
               <PaginationItem>
-                <PaginationNext href="#" className='text-black' />
+                <PaginationNext href="#" className='text-[#c5c6c7]' />
               </PaginationItem>
             </PaginationContent>
           </Pagination>

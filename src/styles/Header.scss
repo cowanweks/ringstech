@@ -5,7 +5,7 @@
 	}
 
 	& #NavBar {
-		border-bottom: 1px solid #ddd;
+		// border-bottom: 1px solid #ddd;
 
 		& .navs .nav_item {}
 
@@ -16,15 +16,5 @@
 		& .navs .nav_item:hover > a {
 			color: #ff7701;
 		}
-	}
-}
-
-@keyframes marquee {
-	0% {
-		transform: translateX(0);
-	}
-
-	100% {
-		transform: translateX(-100%);
 	}
 }

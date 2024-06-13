@@ -5,7 +5,7 @@ import "@styles/ItemCard.scss"
 export default function ItemCard(props: { title: string, description: string, price: number, image: string }) {
 
 
-	return <div className="product-card">
+	return <div className="product-card bg-[#c5c6c7]">
 		<img src={props.image} alt="Product Image" className="product-image" />
 		<div className="product-details">
 			<h2 className="product-title text-slate-800">{props.title}</h2>

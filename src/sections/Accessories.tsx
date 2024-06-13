@@ -13,13 +13,13 @@ export default function Accessories() {
 				<h1 className="font-bold text-lg">ACCESSORIES</h1>
 
 				<ul className="flex font-medium gap-x-6">
-					<li className="text-black cursor-pointer hover:text-[#000]">
+					<li className="text-[#ff7701] cursor-pointer hover:text-[#ff7701]">
 						<NavLink to="">ALL ACCESSORIES</NavLink>
 					</li>
-					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">GEARS & DEVICES</NavLink></li>
-					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">AUDIO</NavLink></li>
-					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">CAMERA & VISUAL</NavLink></li>
-					<li className="cursor-pointer hover:text-[#000]"><NavLink to="">POWERBANK & CHARGING</NavLink></li>
+					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">GEARS & DEVICES</NavLink></li>
+					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">AUDIO</NavLink></li>
+					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">CAMERA & VISUAL</NavLink></li>
+					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">POWERBANK & CHARGING</NavLink></li>
 				</ul>
 			</div>
 

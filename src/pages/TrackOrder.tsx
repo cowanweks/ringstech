@@ -1,3 +1,4 @@
+import "@styles/TrackOrder.scss"
 import Map from '@sections/Map'
 import Header from '@sections/Header'
 import Footer from '@sections/Footer'
@@ -5,12 +6,14 @@ import Footer from '@sections/Footer'
 
 export default function TrackOrder() {
 
+  // min-height: calc(100dvh - 47px);
+
 
   return (
-    <div className="">
+    <div>
       <Header />
-      <section className=''>
-
+      <section id="TrackOrder" className=''>
+        Hello
       </section>
       <Map />
       <Footer />

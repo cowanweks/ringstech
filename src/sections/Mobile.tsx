@@ -16,12 +16,12 @@ export default function Mobiles() {
 				<h1 className="font-bold text-lg">MOBILES</h1>
 
 				<ul className="flex font-medium  gap-x-6">
-					<li className="text-black cursor-pointer hover:text-[#000] my-0 leading-10">
+					<li className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
 						<NavLink to="">All PHONES</NavLink>
 					</li>
-					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY NOTE PHONES</NavLink></li>
-					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY S PHONES</NavLink></li>
-					<li className="my-0 leading-10 cursor-pointer hover:text-[#000]"><NavLink to="">GALAXY FOLD PHONES</NavLink></li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]"><NavLink to="">GALAXY NOTE PHONES</NavLink></li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]"><NavLink to="">GALAXY S PHONES</NavLink></li>
+					<li className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]"><NavLink to="">GALAXY FOLD PHONES</NavLink></li>
 				</ul>
 			</div>
 
