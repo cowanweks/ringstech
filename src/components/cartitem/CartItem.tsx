@@ -2,9 +2,14 @@ import { useState } from 'react'
 import { Button } from '@shadcn-ui/button'
 import { HiPlus as Addicon, HiMinus as MinusIcon } from 'react-icons/hi2'
 
+
 export interface IProduct {
   inStock: number,
   ram?: string,
+  display?: string,
+  processor?: string,
+  cameras?: string,
+  battery?: string,
   rom?: string,
   type: string,
   model: string,
@@ -46,8 +51,12 @@ export default function CartItem({ item }: { item: IProduct }) {
         <div className="specifications flex flex-col gap-y-4">
           <p><b>RAM: </b>{item.ram}</p>
           <p><b>ROM: </b>{item.rom}</p>
-          <p><b>Brand:</b> {item.brand}</p>
-          <p><b>Model:</b> {item.model}</p>
+          <p><b>Dispay: </b>{item.display}</p>
+          <p><b>Processor: </b>{item.processor}</p>
+          <p><b>Camera(s): </b>{item.cameras}</p>
+          <p><b>Battery: </b>{item.battery}</p>
+          <p><b>Brand: </b> {item.brand}</p>
+          <p><b>Model: </b> {item.model}</p>
           <p className='flex items-center gap-x-2'><b>Quantity</b>: <QuantityInput /></p>
         </div>
       )}

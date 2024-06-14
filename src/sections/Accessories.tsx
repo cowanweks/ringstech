@@ -1,46 +1,78 @@
 import "@styles/Accessories.scss"
 import ItemCard from "@components/itemcard/ItemCard"
+import { IProduct } from "@components/cartitem/CartItem"
 import { NavLink } from "react-router-dom"
 
 import Image1 from "@assets/accessories/GM9n9u9W8AAX2l9.jpeg"
-import Image2 from "@assets/accessories/GMolfXQX0AA7MFu.jpeg"
-import Image3 from "@assets/accessories/GNc7jDfXIAAcYqn.jpeg"
-import Image4 from "@assets/accessories/GNh44pnWYAANwBB.jpeg"
-import Image5 from "@assets/accessories/GNmjfjRWQAAsoH1.jpeg"
 
-const items = [
+
+const items: Array<IProduct> = [
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
-		price: 5000.05,
+		ram: '8GB',
+		battery: '4000mAh',
+		cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+		display: '',
+		processor: '',
+		rom: '',
+		type: '',
+		inStock: 3,
+		model: 'Samsung Galaxy S24*',
+		brand: 'Samsung',
+		price: 6.00,
 		image: Image1,
-		description: "his is a brief description of the product. It highlights the main features and benefits."
+		gamesIncluded: [],
+		description: 'Galaxy S21 Ultra 5G Silicone Cover with S Pen'
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
-		price: 5000.05,
-		image: Image2,
-		description: "his is a brief description of the product. It highlights the main features and benefits."
+		ram: '8GB',
+		battery: '4000mAh',
+		cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+		display: '6.1-inch Dynamic AMOLED 2X',
+		processor: 'Snapdragon 8 Gen 2',
+		rom: '128GB/256GB',
+		type: 'phone',
+		inStock: 3,
+		model: 'Samsung Galaxy S24*',
+		brand: 'Samsung',
+		price: 6.00,
+		image: Image1,
+		gamesIncluded: [],
+		'description': 'Samsung Galaxy S24*'
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
-		price: 5000.05,
-		image: Image3,
-		description: "his is a brief description of the product. It highlights the main features and benefits."
+		ram: '8GB',
+		battery: '4000mAh',
+		cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+		display: '6.1-inch Dynamic AMOLED 2X',
+		processor: 'Snapdragon 8 Gen 2',
+		rom: '128GB/256GB',
+		type: 'phone',
+		inStock: 3,
+		model: 'Samsung Galaxy S24*',
+		brand: 'Samsung',
+		price: 6.00,
+		image: Image1,
+		gamesIncluded: [],
+		'description': 'Samsung Galaxy S24*'
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
-		price: 5000.05,
-		image: Image4,
-		description: "his is a brief description of the product. It highlights the main features and benefits."
+		ram: '8GB',
+		battery: '4000mAh',
+		cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+		display: '6.1-inch Dynamic AMOLED 2X',
+		processor: 'Snapdragon 8 Gen 2',
+		rom: '128GB/256GB',
+		type: 'phone',
+		inStock: 3,
+		model: 'Samsung Galaxy S24*',
+		brand: 'Samsung',
+		price: 6.00,
+		image: Image1,
+		gamesIncluded: [],
+		'description': 'Samsung Galaxy S24*'
 	},
-	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
-		price: 5000.05,
-		image: Image5,
-		description: "his is a brief description of the product. It highlights the main features and benefits."
-	},
-]
 
+]
 
 export default function Accessories() {
 
@@ -62,7 +94,7 @@ export default function Accessories() {
 			</div>
 
 			<div className="grid grid-cols-4">
-				{items.map((item) => <ItemCard title={item.title} price={item.price} image={item.image} description={item.description} />)}
+				{items.map((item, index) => <ItemCard key={index} item={item} />)}
 
 			</div>
 			<div className="flex items-center justify-center">

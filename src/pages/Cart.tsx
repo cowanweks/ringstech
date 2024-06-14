@@ -6,43 +6,80 @@ import CartItem, { IProduct } from '@components/cartitem/CartItem'
 import Image1 from '@assets/phones/image1.jpg'
 import { Link } from 'react-router-dom'
 
+/*
+1. *Samsung Galaxy S24*
+   - Display: 6.1-inch Dynamic AMOLED 2X
+   - Processor: Snapdragon 8 Gen 2
+   - RAM: 8GB
+   - Storage: 128GB/256GB
+   - Cameras: 50MP (main), 12MP (ultra-wide), 10MP (telephoto)
+   - Battery: 4000mAh
+*/
 
 const items: Array<IProduct> = [
   {
-    ram: '4GB',
-    rom: '128GB',
+    ram: '8GB',
+    battery: '4000mAh',
+    cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+    display: '6.1-inch Dynamic AMOLED 2X',
+    processor: 'Snapdragon 8 Gen 2',
+    rom: '128GB/256GB',
     type: 'phone',
     inStock: 3,
-    model: 'Samsung Galaxy S23 Ultra',
+    model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
     price: 6.00,
     image: Image1,
     gamesIncluded: [],
-    'description': 'WD_BLACK 4TB SN850X NVMe Internal Gaming SSD Solid State Drive - Gen4 PCIe, M.2 2280, Up to 7,300 MB/s - WDS400T2X0E'
+    'description': 'Samsung Galaxy S24*'
   },
   {
-    ram: '4GB',
-    rom: '128GB',
+    ram: '8GB',
+    battery: '4000mAh',
+    cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+    display: '6.1-inch Dynamic AMOLED 2X',
+    processor: 'Snapdragon 8 Gen 2',
+    rom: '128GB/256GB',
     type: 'phone',
     inStock: 3,
-    model: 'Samsung Galaxy S23 Ultra',
+    model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
     price: 6.00,
     image: Image1,
     gamesIncluded: [],
-    'description': 'WD_BLACK 4TB SN850X NVMe Internal Gaming SSD Solid State Drive - Gen4 PCIe, M.2 2280, Up to 7,300 MB/s - WDS400T2X0E'
+    'description': 'Samsung Galaxy S24*'
   },
   {
-    ram: '4GB',
-    rom: '128GB',
+    ram: '8GB',
+    battery: '4000mAh',
+    cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+    display: '6.1-inch Dynamic AMOLED 2X',
+    processor: 'Snapdragon 8 Gen 2',
+    rom: '128GB/256GB',
     type: 'phone',
     inStock: 3,
-    model: 'Samsung Galaxy S23 Ultra',
+    model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
     price: 6.00,
     image: Image1,
     gamesIncluded: [],
-    'description': 'WD_BLACK 4TB SN850X NVMe Internal Gaming SSD Solid State Drive - Gen4 PCIe, M.2 2280, Up to 7,300 MB/s - WDS400T2X0E'
+    'description': 'Samsung Galaxy S24*'
+  },
+  {
+    ram: '8GB',
+    battery: '4000mAh',
+    cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
+    display: '6.1-inch Dynamic AMOLED 2X',
+    processor: 'Snapdragon 8 Gen 2',
+    rom: '128GB/256GB',
+    type: 'phone',
+    inStock: 3,
+    model: 'Samsung Galaxy S24*',
+    brand: 'Samsung',
+    price: 6.00,
+    image: Image1,
+    gamesIncluded: [],
+    'description': 'Samsung Galaxy S24*'
   },
 
 ]
@@ -55,7 +92,7 @@ export default function Cart() {
   return (
     <div id='Cart' className="">
       <Header />
-      <div className="h-72 mx-16 mt-10 rounded-[4px] bg-white">
+      <div className="h-72 mt-10 bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]">
       </div>
       <div className="grid grid-cols-5 min-h-[100dvh] px-16 py-8 gap-x-6">
         <div className="flex flex-col gap-2 col-span-4">
@@ -69,7 +106,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
-      <div className="h-72 rounded-[4px] bg-white"></div>
+      <div className="h-72 bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]"></div>
       <Map />
       <Footer />
     </div>

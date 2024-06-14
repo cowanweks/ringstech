@@ -107,7 +107,7 @@ export default function Header() {
 
 
   return (
-    <div id="Header" className="sticky top-0 bg-[#1F2833]">
+    <div id="Header" className="sticky top-0 bg-[#027353]">
 
       <div className="flex items-center h-12 px-2  border-b-[1px] border-[rgba(255,255,254,0.2)]">
         <ul className="flex items-center gap-x-4">

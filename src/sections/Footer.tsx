@@ -25,7 +25,7 @@ export default function Footer() {
 
 
 	return (
-		<section id='Footer' className='p-16   bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]'>
+		<section id='Footer' className='p-16 bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]'>
 			<div className="categories flex-1">
 				<h2>PRODUCT CATEGORIES</h2>
 				<ul className='pt-2'>
