@@ -9,6 +9,7 @@ import Repairs from '@pages/Repairs'
 import SignIn from '@pages/SignIn';
 import SignUp from '@pages/SignUp';
 import TrackOrder from '@pages/TrackOrder';
+import Checkout from '@pages/Checkout.tsx';
 
 const router = createBrowserRouter([
   {
@@ -31,13 +32,17 @@ const router = createBrowserRouter([
     path: "/repairs",
     element: <Repairs />,
   },
- {
+  {
     path: "/signin",
     element: <SignIn />,
   },
- {
+  {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
   },
 ]);
 

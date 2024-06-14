@@ -10,6 +10,45 @@ import {
 import Image1 from "@assets/phones/nonshop_violet.webp"
 import Image2 from "@assets/phones/nonshop_gray.webp"
 
+const items = [
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+  {
+    title: "Galaxy S23 Ultra",
+    price: 5000.05,
+    image: Image1,
+    description: "his is a brief description of the product. It highlights the main features and benefits."
+  },
+]
+
 export default function Shop() {
 
 
@@ -22,16 +61,8 @@ export default function Shop() {
         <div className="items col-span-3">
 
           <div className="grid grid-cols-3">
-            <ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S23 Ultra" price={5000.05} image={Image1} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
-            <ItemCard title="Galaxy S24 Ultra" price={5000.05} image={Image2} description="his is a brief description of the product. It highlights the main features and benefits." />
+            {items.map((item, index) => <ItemCard key={index} title={item.title} price={item.price} image={item.image} description={item.description} />)}
+
           </div>
           <Pagination className='h-16 py-16'>
             <PaginationContent>

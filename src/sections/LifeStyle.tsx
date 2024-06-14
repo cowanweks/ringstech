@@ -1,58 +1,73 @@
-import "@styles/Accessories.scss"
+import "@styles/LifeStyle.scss"
 import ItemCard from "@components/itemcard/ItemCard"
 import { NavLink } from "react-router-dom"
+// import { Button } from "@shadcn-ui/button"
 
-import Image1 from "@assets/accessories/GM9n9u9W8AAX2l9.jpeg"
-import Image2 from "@assets/accessories/GMolfXQX0AA7MFu.jpeg"
-import Image3 from "@assets/accessories/GNc7jDfXIAAcYqn.jpeg"
-import Image4 from "@assets/accessories/GNh44pnWYAANwBB.jpeg"
-import Image5 from "@assets/accessories/GNmjfjRWQAAsoH1.jpeg"
+import Image1 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image2 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image3 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image4 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image5 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image6 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+import Image7 from "@assets/lifestyle/LOB1_Bundle-DT.avif"
+
 
 const items = [
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
+		title: "Galaxy S23 Ultra",
 		price: 5000.05,
 		image: Image1,
 		description: "his is a brief description of the product. It highlights the main features and benefits."
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
+		title: "Galaxy S23 Ultra",
 		price: 5000.05,
 		image: Image2,
 		description: "his is a brief description of the product. It highlights the main features and benefits."
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
+		title: "Galaxy S23 Ultra",
 		price: 5000.05,
 		image: Image3,
 		description: "his is a brief description of the product. It highlights the main features and benefits."
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
+		title: "Galaxy S23 Ultra",
 		price: 5000.05,
 		image: Image4,
 		description: "his is a brief description of the product. It highlights the main features and benefits."
 	},
 	{
-		title: "Galaxy S21 Ultra 5G Silicone Cover with S Pen",
+		title: "Galaxy S23 Ultra",
 		price: 5000.05,
 		image: Image5,
 		description: "his is a brief description of the product. It highlights the main features and benefits."
 	},
+	{
+		title: "Galaxy S23 Ultra",
+		price: 5000.05,
+		image: Image6,
+		description: "his is a brief description of the product. It highlights the main features and benefits."
+	},
+	{
+		title: "Galaxy S23 Ultra",
+		price: 5000.05,
+		image: Image7,
+		description: "his is a brief description of the product. It highlights the main features and benefits."
+	},
 ]
 
-
-export default function Accessories() {
+export default function LifeStyle() {
 
 
 	return (
-		<section id="Accessories">
+		<section id="LifeStyle">
 			<div className="flex justify-between">
-				<h1 className="font-bold text-lg">ACCESSORIES</h1>
+				<h1 className="font-bold text-lg">LIFESTYLE</h1>
 
 				<ul className="flex font-medium gap-x-6">
 					<li className="text-[#ff7701] cursor-pointer hover:text-[#ff7701]">
-						<NavLink to="">ALL ACCESSORIES</NavLink>
+						<NavLink to="">ALL LIFESTYLE</NavLink>
 					</li>
 					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">GEARS & DEVICES</NavLink></li>
 					<li className="cursor-pointer hover:text-[#ff7701]"><NavLink to="">AUDIO</NavLink></li>
