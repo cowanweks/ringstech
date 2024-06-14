@@ -10,7 +10,7 @@ export default function ItemCard({ item }: { item: IProduct }) {
 		<img src={item?.image} alt="Product Image" className="product-image" />
 		<div className="product-details">
 			<h2 className="product-title text-slate-800">{item?.description}</h2>
-			<p className="product-description text-black">
+			<p className="product-description text-white">
 				{item?.cameras}
 				{item?.battery}
 				{item?.display}
