@@ -8,7 +8,7 @@ import {
 } from '@shadcn-ui/pagination'
 // import { Button } from '@shadcn-ui/button'
 import Image1 from "@assets/phones/nonshop_violet.webp"
-import Image2 from "@assets/phones/nonshop_gray.webp"
+
 
 const items = [
   {
