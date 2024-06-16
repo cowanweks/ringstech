@@ -1,11 +1,6 @@
 import "@styles/Header.scss";
-// import BrandLogo from "@assets/xiaomi-kenya.jpeg"
+import BrandLogo from "@assets/logo.jpg"
 import { Button } from "@shadcn-ui/button"
-import {
-  Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription
-  , DrawerClose, DrawerFooter
-} from "@shadcn-ui/drawer"
-import { Input } from "@shadcn-ui/input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -17,7 +12,7 @@ function NavBar() {
   return (
     <nav id="NavBar" className="flex h-16 items-center justify-between px-4  bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]">
       <Link to="/" className="no-underline">
-        <img src={""} alt="RingsTech" className="h-16 sm:h-16 mr-8 cursor-pointer" />
+        <img src={BrandLogo} alt="RingsTech" className="h-16 sm:h-16 mr-8 cursor-pointer" />
       </Link>
 
       <button onClick={() => setShowMenu(!showMenu)} className="sm:hidden">
@@ -36,11 +31,11 @@ function NavBar() {
         <li className="nav_item mb-0 cursor-pointer text-[#C5C6C7]">
           <Link to="/shop">SHOP</Link>
         </li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/">SMARTPHONES</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/">ACCESSORIES</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/">COVERS & PROTECTORS</Link></li>
+        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">SMARTPHONES</Link></li>
+        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">ACCESSORIES</Link></li>
+        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">COVERS & PROTECTORS</Link></li>
         <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/repairs">REPAIRS</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/">LIFESTYLE</Link></li>
+        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">LIFESTYLE</Link></li>
         <li className="nav_item mb-0 text-[#C5C6C7]">
           <Link to="/trackorder">
             <Button className="flex gap-x-2">
@@ -53,34 +48,11 @@ function NavBar() {
           </Link>
         </li>
         <li className="inline-flex gap-x-8 items-center mb-0">
-          <Drawer>
-            <DrawerTrigger>
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C5C6C7" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-              </button>
-            </DrawerTrigger>
-            <DrawerContent>
-              <div className="mx-auto w-full max-w-sm">
-                <DrawerHeader>
-                  <DrawerTitle>Search</DrawerTitle>
-                  <DrawerDescription>Search for a product</DrawerDescription>
-                </DrawerHeader>
-
-                <div className="flex w-full max-w-sm items-center space-x-2">
-                  <Input type="keyword" placeholder="Enter Search keyword" />
-                  <Button type="submit">Search</Button>
-                </div>
-
-                <DrawerFooter>
-                  <DrawerClose asChild>
-                    <Button variant="outline" type="submit">Cancel</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </div>
-            </DrawerContent>
-          </Drawer>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C5C6C7" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </button>
           <Link to="/cart">
             <button className="">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C5C6C7" className="w-6 h-6">
@@ -107,15 +79,15 @@ export default function Header() {
 
 
   return (
-    <div id="Header" className="sticky top-0 bg-[#027353]">
+    <div id="Header" className="sticky top-0 bg-[#027353]" style={{zIndex: 1}}>
 
       <div className="flex items-center h-12 px-2  border-b-[1px] border-[rgba(255,255,254,0.2)]">
         <ul className="flex items-center gap-x-4">
           <li className="nav_item mb-0 cursor-pointer
           text-[#C5C6C7] pr-4 border-r-[1px]">
             <Link to="tel:0768676944" className="flex gap-x-2 no-underline" style={{ textDecoration: 'none' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff7701" className="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff7701" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
               </svg>
               <span>0768676944</span>
             </Link>
