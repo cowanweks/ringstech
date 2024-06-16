@@ -23,12 +23,9 @@ const fallbackItems: Array<IProduct> = [
 		brand: 'Samsung',
 		unitPrice: 6.00,
 		productImage: Image1,
-		gamesIncluded: [],
 		description: 'Samsung Galaxy S24*',
 		availableColors: '',
-		isAvailable: true,
 		productCategory: '',
-		productID: '',
 		productName: ''
 	}
 
@@ -77,18 +74,15 @@ export default function LifeStyle() {
 						cameras={item.cameras}
 						description={item.description}
 						inStock={item.inStock}
-						isAvailable={item.isAvailable}
 						model={item.model}
 						ram={item.ram}
 						rom={item.rom}
 						processor={item.processor}
-						gamesIncluded={item.gamesIncluded}
 						productCategory={item.productCategory}
 						productName={item.productName}
 						type={item.type}
 						unitPrice={item.unitPrice}
 						productImage={item.productImage}
-						productID={item.productID}
 						availableColors={item.availableColors} />
 				))}
 			</div>

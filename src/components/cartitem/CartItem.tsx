@@ -26,7 +26,7 @@ function QuantityInput() {
 export default function CartItem({ item }: { item: IProduct }) {
 
   return <div id='CartItem' className="grid grid-cols-5 rounded-[4px] bg-white py-8 px-4">
-    <img className='h-[200px]' src={item.image!} alt="" />
+    <img className='h-[200px]' src={item.productImage!} alt="" />
     <div className="description flex flex-col gap-y-2 col-span-3">
       <h2 className='text-black'>{item.description}</h2>
       <p className='text-red-500'>Only {item.inStock} left in stock</p>
@@ -46,11 +46,10 @@ export default function CartItem({ item }: { item: IProduct }) {
       {item.type === 'playstation' && (
         <div>
           <p>Model: {item.model}</p>
-          <p>Price: ${item.price}</p>
-          <p>Games Included: {item.gamesIncluded!.join(', ')}</p>
+          <p>Price: ${item.unitPrice}</p>
         </div>
       )}
     </div>
-    <span className='font-bold text-right'>Kshs. {item.price}</span>
+    <span className='font-bold text-right'>Kshs. {item.unitPrice}</span>
   </div>
 }

@@ -2,19 +2,11 @@ import Map from '@sections/Map'
 import Header from '@sections/Header'
 import Footer from '@sections/Footer'
 import { Button } from '@shadcn-ui/button'
-import CartItem, { IProduct } from '@components/cartitem/CartItem'
+import  { IProduct } from '@defines/index'
+import CartItem from '@components/cartitem/CartItem'
 import Image1 from '@assets/phones/image1.jpg'
 import { Link } from 'react-router-dom'
 
-/*
-1. *Samsung Galaxy S24*
-   - Display: 6.1-inch Dynamic AMOLED 2X
-   - Processor: Snapdragon 8 Gen 2
-   - RAM: 8GB
-   - Storage: 128GB/256GB
-   - Cameras: 50MP (main), 12MP (ultra-wide), 10MP (telephoto)
-   - Battery: 4000mAh
-*/
 
 const items: Array<IProduct> = [
   {
@@ -28,10 +20,9 @@ const items: Array<IProduct> = [
     inStock: 3,
     model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
-    price: 6.00,
-    image: Image1,
-    gamesIncluded: [],
-    'description': 'Samsung Galaxy S24*'
+    unitPrice: 6.00,
+    productImage: Image1,
+    description: 'Samsung Galaxy S24*'
   },
   {
     ram: '8GB',
@@ -44,10 +35,9 @@ const items: Array<IProduct> = [
     inStock: 3,
     model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
-    price: 6.00,
-    image: Image1,
-    gamesIncluded: [],
-    'description': 'Samsung Galaxy S24*'
+    unitPrice: 6.00,
+    productImage: Image1,
+    description: 'Samsung Galaxy S24*'
   },
   {
     ram: '8GB',
@@ -60,10 +50,9 @@ const items: Array<IProduct> = [
     inStock: 3,
     model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
-    price: 6.00,
-    image: Image1,
-    gamesIncluded: [],
-    'description': 'Samsung Galaxy S24*'
+    unitPrice: 6.00,
+    productImage: Image1,
+    description: 'Samsung Galaxy S24*'
   },
   {
     ram: '8GB',
@@ -76,10 +65,9 @@ const items: Array<IProduct> = [
     inStock: 3,
     model: 'Samsung Galaxy S24*',
     brand: 'Samsung',
-    price: 6.00,
-    image: Image1,
-    gamesIncluded: [],
-    'description': 'Samsung Galaxy S24*'
+    unitPrice: 6.00,
+    productImage: Image1,
+    description: 'Samsung Galaxy S24*'
   },
 
 ]
@@ -87,7 +75,7 @@ const items: Array<IProduct> = [
 
 export default function Cart() {
 
-  const subtotal = items.reduce((total, item) => total + item.price!, 0);
+  const subtotal = items.reduce((total, item) => total + item.unitPrice!, 0);
 
   return (
     <div id='Cart' className="">
