@@ -62,30 +62,33 @@ export default function Mobiles() {
 			</div>
 
 			<div className="mobiles grid grid-rows-1 grid-cols-4">
-				{(data.length > 0 ? data : fallbackItems).map((item, index) => (
+				{data.length > 0 ? data.map((item, index) => (
 					<ItemCard
-					key={index}
-					display={item.display}
-					battery={item.battery}
-					brand={item.brand}
-					cameras={item.cameras}
-					description={item.description}
-					inStock={item.inStock}
-					model={item.model}
-					ram={item.ram}
-					rom={item.rom}
-					processor={item.processor}
-					productCategory={item.productCategory}
-					productName={item.productName}
-					unitPrice={item.unitPrice}
-					productImage={item.productImage}
-					availableColors={item.availableColors} />
-				))}
+						key={index}
+						display={item.display}
+						battery={item.battery}
+						brand={item.brand}
+						cameras={item.cameras}
+						description={item.description}
+						inStock={item.inStock}
+						model={item.model}
+						ram={item.ram}
+						rom={item.rom}
+						processor={item.processor}
+						productCategory={item.productCategory}
+						productName={item.productName}
+						unitPrice={item.unitPrice}
+						productImage={item.productImage}
+						availableColors={item.availableColors} />
+				)) : ""}
 			</div>
-			<div className="flex items-center justify-center">
-				<NavLink to="/shop" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
+			{data.length > 0 ?
+				<div className="flex items-center justify-center">
+					<NavLink to="/shop" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
 				hover:bg-white hover:border-blue-500">LOAD MORE PRODUCTS</NavLink>
-			</div>
+				</div> : ""
+			}
+
 		</section>
 	)
 }

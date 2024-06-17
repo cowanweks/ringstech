@@ -21,11 +21,10 @@ const ItemCard: React.FC<IProduct> = ({
 	ram,
 }) => {
 
-	// console.log(parseJSON(availableColors!))
 
 	return <div className="product-card bg-white shadow-lg  overflow-hidden transition-transform transform hover:scale-105">
 		<img
-			src={`${API_URL}/images/${productImage}`}
+			src={`${API_URL}/uploads?image=${productImage}`}
 			alt="Product Image"
 			className="product-image w-full h-48 object-cover"
 		/>
