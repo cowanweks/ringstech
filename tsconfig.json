@@ -11,6 +11,9 @@
       "@pages/*": [
         "./src/pages/*"
       ],
+      "@data/*": [
+        "./src/data/*"
+      ],
       "@utils/*": [
         "./src/utils/*"
       ],
