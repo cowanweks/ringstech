@@ -4,31 +4,7 @@ import { NavLink } from "react-router-dom"
 import { IProduct } from "@defines/index"
 import { useState, useEffect } from "react"
 import axios from "axios"
-
-import Image1 from "@assets/phones/image1.jpg"
 import { API_URL } from "@utils/index"
-
-const fallbackItems: Array<IProduct> = [
-	{
-		ram: '8GB',
-		battery: '4000mAh',
-		cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
-		display: '6.1-inch Dynamic AMOLED 2X',
-		processor: 'Snapdragon 8 Gen 2',
-		rom: '128GB/256GB',
-		type: 'phone',
-		inStock: 3,
-		model: 'Samsung Galaxy S24*',
-		brand: 'Samsung',
-		unitPrice: 6.00,
-		productImage: Image1,
-		description: 'Samsung Galaxy S24*',
-		availableColors: '',
-		productCategory: '',
-		productName: ''
-	}
-
-]
 
 export default function Mobiles() {
 
