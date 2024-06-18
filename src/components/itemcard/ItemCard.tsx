@@ -34,7 +34,7 @@ const ItemCard: React.FC<IProduct> = ({
 			className="product-image w-full h-64 object-cover"
 		/>*/}
 		<img
-			src={`/zfold5.webp`}
+			src={`/phones/${productImage}`}
 			alt="Product Image"
 			className="product-image w-full h-64 object-cover"
 		/>
