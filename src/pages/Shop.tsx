@@ -1,34 +1,34 @@
-import Header from '@sections/Header'
+import {Header} from '@sections/Header'
 import Footer from '@sections/Footer'
 import Map from '@sections/Map'
 import ItemCard from '@components/itemcard/ItemCard'
-// import { IProduct } from '@defines/index'
+import { IProduct } from '@defines/index'
 import {
   Pagination, PaginationContent, PaginationItem, PaginationNext,
   PaginationPrevious, PaginationLink, PaginationEllipsis
 } from '@shadcn-ui/pagination'
-// import { useEffect, useState } from 'react'
-// import { API_URL } from "@utils/index"
-// import axios from 'axios'
-import items from "@data/phones.json"
+import { useEffect, useState } from 'react'
+import { API_URL } from "@utils/index"
+import axios from 'axios'
+// import items from "@data/phones.json"
 
 
 
 export default function Shop() {
 
-  // const [data, setData] = useState<IProduct[]>([]);
+  const [data, setData] = useState<IProduct[]>([]);
 
-  // useEffect(() => {
-  //   axios.get(`${API_URL}/products/?product_category=phone`)
-  //     .then(res => {
-  //       if (Array.isArray(res.data)) {
-  //         setData(res.data);
-  //       } else {
-  //         console.error('Fetched data is not an array:', res.data);
-  //       }
-  //     })
-  //     .catch(error => console.log(error));
-  // }, []);
+  useEffect(() => {
+    axios.get(`${API_URL}/products/?product_category=phone`)
+      .then(res => {
+        if (Array.isArray(res.data)) {
+          setData(res.data);
+        } else {
+          console.error('Fetched data is not an array:', res.data);
+        }
+      })
+      .catch(error => console.log(error));
+  }, []);
 
   return (
     <div className="">
@@ -39,7 +39,7 @@ export default function Shop() {
         <div className="items col-span-3">
 
           <div className="grid grid-cols-3">
-            {items.length > 0 ? items.map((item, index) => (
+            {data.length > 0 ? data.map((item, index) => (
               <ItemCard
                 key={index}
                 display={item.display}

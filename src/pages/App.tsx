@@ -1,6 +1,6 @@
 import Map from '@sections/Map'
 import Hero from '@sections/Hero'
-import Header from '@sections/Header'
+import { Header } from '@sections/Header'
 import Footer from '@sections/Footer'
 import Mobiles from '@sections/Mobile'
 // import LifeStyle from '@sections/LifeStyle'

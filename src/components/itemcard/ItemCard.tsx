@@ -1,7 +1,7 @@
 import { Button } from "@shadcn-ui/button"
 import "@styles/ItemCard.scss"
 import { IProduct } from "@defines/index"
-// import { API_URL } from "@utils/index"
+import { API_URL } from "@utils/index"
 import PropTypes from 'prop-types'
 import { FaWhatsapp as WhatsupIcon } from "react-icons/fa"
 
@@ -27,17 +27,18 @@ const ItemCard: React.FC<IProduct> = ({
 	const message = `https://wa.me/${phone}?text=Can%20I%20get%20to%20know%20about
 	 ${productName}%20with%20${ram}%20RAM%20and%20${rom}%20ROM?`
 
-	return <div className="product-card mx-h-[500px] bg-white shadow-lg  overflow-hidden transition-transform transform hover:scale-105">
+	return <div className="product-card max-h-max bg-white shadow-lg  overflow-hidden transition-transform transform hover:scale-105">
 		{/*<img
-			src={`${API_URL}/uploads?image=${productImage}`}
+			src={`/phones/${productImage}`}
 			alt="Product Image"
 			className="product-image w-full h-64 object-cover"
 		/>*/}
 		<img
-			src={`/phones/${productImage}`}
+			src={`${API_URL}/uploads?image=${productImage}`}
 			alt="Product Image"
 			className="product-image w-full h-64 object-cover"
 		/>
+
 		<div className="product-details p-4">
 			<p className="product-title px-2 text-lg font-bold text-red-600 mt-2">{productName}</p>
 			<p className="product-price text-lg font-bold text-green-600 mt-2">

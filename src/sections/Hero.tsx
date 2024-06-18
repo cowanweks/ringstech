@@ -11,19 +11,19 @@ import Image4 from "@assets/accessories/GM9n9u9W8AAX2l9.jpeg"
 const slides = [
   {
     image: Image1,
-    caption: "Caption for Slide 1"
+    caption: "Slide 1"
   },
   {
     image: Image2,
-    caption: "Caption for Slide 2"
+    caption: "Slide 2"
   },
   {
     image: Image3,
-    caption: "Caption for Slide 3"
+    caption: "Slide 3"
   },
   {
     image: Image4,
-    caption: "Caption for Slide 4"
+    caption: "Slide 4"
   }
 ];
 
