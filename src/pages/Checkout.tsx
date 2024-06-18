@@ -1,5 +1,5 @@
 import Map from '@sections/Map'
-import Header from '@sections/Header'
+import {Header} from '@sections/Header'
 import Footer from '@sections/Footer'
 
 

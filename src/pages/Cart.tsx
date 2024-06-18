@@ -1,5 +1,5 @@
 import Map from '@sections/Map'
-import Header from '@sections/Header'
+import {Header} from '@sections/Header'
 import Footer from '@sections/Footer'
 import { Button } from '@shadcn-ui/button'
 import  { IProduct } from '@defines/index'

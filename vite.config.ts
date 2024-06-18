@@ -7,6 +7,7 @@ export default defineConfig({
     alias: {
       "@shadcn-ui": path.resolve(__dirname, "./src/components/shadcn/ui"),
       "@public": path.resolve(__dirname, "./public"),
+      "@data": path.resolve(__dirname, "./src/data"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@utils": path.resolve(__dirname, "./src/utils"),

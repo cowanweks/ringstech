@@ -10,6 +10,7 @@ import SignIn from '@pages/SignIn';
 import SignUp from '@pages/SignUp';
 import TrackOrder from '@pages/TrackOrder';
 import Checkout from '@pages/Checkout.tsx';
+import Admin from '@pages/Admin.tsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <Checkout />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
 ]);
 

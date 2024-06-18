@@ -23,6 +23,9 @@ function PopularProduct() {
 
 export default function Footer() {
 
+	const email = "samsungphonesandspairecentre@gmail.com"
+	const message = `mailto:${email}?subject=Interested in Samsung Phones&body=Hello%20Can%20I%20get%20to%20kow%20about%20the%20Phones%20please!`
+
 
 	return (
 		<section id='Footer' className='p-16 bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]'>
@@ -51,15 +54,16 @@ export default function Footer() {
 				<h2>CONTACT US</h2>
 				<ul className='pt-2'>
 					<li >
-						<Link target='_blank' to="tel:0768676944" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2'>
+						<Link target='_blank' to="tel:+254740801606" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2'>
 							< HiPhone />
-							<span>0768 676 944</span>
+							<span>+254 740 801 606</span>
 						</Link>
 					</li>
 					<li >
-						<Link target='_blank' to="" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2'>
+						<Link target='_blank' to={message}
+							style={{ textDecoration: 'none' }} className='flex items-center gap-x-2'>
 							<FaEnvelope />
-							<span>info@xiaomistores.co.ke</span>
+							<span>samsungphonesandspairecentre@gmail.com</span>
 						</Link>
 					</li>
 					<li>

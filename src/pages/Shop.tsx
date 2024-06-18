@@ -1,4 +1,4 @@
-import Header from '@sections/Header'
+import {Header} from '@sections/Header'
 import Footer from '@sections/Footer'
 import Map from '@sections/Map'
 import ItemCard from '@components/itemcard/ItemCard'
@@ -7,33 +7,12 @@ import {
   Pagination, PaginationContent, PaginationItem, PaginationNext,
   PaginationPrevious, PaginationLink, PaginationEllipsis
 } from '@shadcn-ui/pagination'
-import Image1 from "@assets/phones/nonshop_violet.webp"
 import { useEffect, useState } from 'react'
 import { API_URL } from "@utils/index"
 import axios from 'axios'
+// import items from "@data/phones.json"
 
 
-const fallbackItems: Array<IProduct> = [
-  {
-    ram: '8GB',
-    battery: '4000mAh',
-    cameras: '50MP (main), 12MP (ultra-wide), 10MP (telephoto)',
-    display: '6.1-inch Dynamic AMOLED 2X',
-    processor: 'Snapdragon 8 Gen 2',
-    rom: '128GB/256GB',
-    type: 'phone',
-    inStock: 3,
-    model: 'Samsung Galaxy S24*',
-    brand: 'Samsung',
-    unitPrice: 6.00,
-    productImage: Image1,
-    description: 'Samsung Galaxy S24*',
-    availableColors: '',
-    productCategory: '',
-    productName: ''
-  }
-
-]
 
 export default function Shop() {
 
@@ -60,7 +39,7 @@ export default function Shop() {
         <div className="items col-span-3">
 
           <div className="grid grid-cols-3">
-            {(data.length > 0 ? data : fallbackItems).map((item, index) => (
+            {data.length > 0 ? data.map((item, index) => (
               <ItemCard
                 key={index}
                 display={item.display}
@@ -78,7 +57,7 @@ export default function Shop() {
                 unitPrice={item.unitPrice}
                 productImage={item.productImage}
                 availableColors={item.availableColors} />
-            ))}
+            )) : ""}
 
           </div>
           <Pagination className='h-16 py-16'>
