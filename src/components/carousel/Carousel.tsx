@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 
 
-export default function Carousel(props: { slides: Array<{image: string, caption: string}> }) {
+export default function Carousel(props: { slides: Array<{ image: string, caption: string }> }) {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -14,10 +14,10 @@ export default function Carousel(props: { slides: Array<{image: string, caption:
     }, []);
 
     return (
-        <div className="carousel">
+        <div className="carousel h-[56.25vw]">
             {props.slides.map((slide, index) => (
                 <div key={index} className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}>
-                    <img src={slide.image} alt={`Slide ${index + 1}`} className=''/>
+                    <img src={slide.image} alt={`Slide ${index + 1}`} className='' />
                     <div className="carousel-caption">{slide.caption} of {props.slides.length}</div>
                 </div>
             ))}

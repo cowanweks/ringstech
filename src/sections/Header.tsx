@@ -22,7 +22,7 @@ const NavBar = () => {
         <div className="hidden md:flex md:h-auto space-x-6">
           <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SMARTPHONES</a>
           <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
-          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS & PROTECTORS</a>
+          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <button className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
@@ -79,17 +79,24 @@ const NavBar = () => {
             ACCESSORIES
           </Link>
           <Link to="/shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
-            COVERS & PROTECTORS
+            COVERS
           </Link>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+              <button className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
                 REPAIRS
               </button>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80 flex flex-col gap-y-4">
-              <span className="text-green-400 font-bold">PayBill No: <span className="text-red-500">247 247</span></span>
-              <span className="text-green-400 font-bold">ACcount No: <span className="text-red-500">353 562</span></span>
+            <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
+              <div className="h-10 border-b mb-2">We Offer the following Services</div>
+              <div className="h-8 border-b mb-2">1: Screen Replacement</div>
+              <div className="h-8 border-b mb-2">2: Battery Replacement</div>
+              <div className="h-8 border-b mb-2">3: Camera Repair & Replacement</div>
+              <div className="h-8 border-b mb-2">4: Charging Port Repair</div>
+              <div className="h-8 border-b mb-2">5: Water Damage Repair</div>
+              <div className="h-8 border-b mb-2">6: Software Troubleshooting</div>
+              <div className="h-8 border-b mb-2">7: Button Repair (power, volume, home button)</div>
+              <div className="h-8">8: Speaker or Microphone Repair</div>
             </HoverCardContent>
           </HoverCard>
           <Link to="/track" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
@@ -97,10 +104,10 @@ const NavBar = () => {
           </Link>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <div className="flex gap-x-4 px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+              <button className="flex gap-x-4 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
                 <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mpesa.png" alt="mpesa" />
                 <span>PayBill</span>
-              </div>
+              </button>
             </HoverCardTrigger>
             <HoverCardContent className="w-80 flex flex-col gap-y-4">
               <span className="text-green-400 font-bold">PayBill No: <span className="text-red-500">247 247</span></span>

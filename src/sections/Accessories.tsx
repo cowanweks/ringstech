@@ -34,27 +34,27 @@ export default function Accessories() {
 	return (
 		<section id="Accessories" className="min-h-dvh px-4 py-8">
 			<div className="bg-white shadow-md">
-				<div className="container mx-auto px-6 py-3 flex justify-between items-center">
+				<div className="container mx-auto mb-16 border px-6 py-3 flex justify-between items-center">
 					<h1 className="font-bold text-lg">ACCESSORIES</h1>
-					<div className="md:hidden">
+					<div className="md:hidden z-10">
 						<button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
 							{isOpen ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
 						</button>
 					</div>
 					<ul className={`flex-col md:flex md:flex-row font-medium gap-x-6 absolute md:static w-full md:w-auto bg-white md:bg-transparent ${isOpen ? 'flex' : 'hidden'} md:flex`}>
-						<NavLink to="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
+						<NavLink onClick={toggleMenu}  to="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
 							<li className="py-2 md:py-0 px-6 md:px-0">ALL</li>
 						</NavLink>
-						<NavLink to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">GEARS & DEVICES</li>
 						</NavLink>
-						<NavLink to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">AUDIO</li>
 						</NavLink>
-						<NavLink to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">CAMERA & VISUAL</li>
 						</NavLink>
-						<NavLink to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">POWERBANK & CHARGING</li>
 						</NavLink>
 					</ul>
