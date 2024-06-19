@@ -23,7 +23,7 @@ const ItemCard = (props: IProduct) => {
   return (
     <div className="product-card max-h-max bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
       <img
-        src={`${API_URL}/uploads?image=${props.productImage}`}
+        src={`${API_URL}/images/${props.productImage}`}
         alt="Product Image"
         className="product-image w-full h-96 object-cover"
       />
@@ -89,7 +89,7 @@ const ItemCard = (props: IProduct) => {
 
             <span className="h-fit px-2 py-1 text-center">
               <span className="text-red-500"> Description</span>
-              <DescriptionIcon size={16}/> {props.description}</span>
+              <DescriptionIcon size={16} /> {props.description}</span>
           )}
         </p>
         {props.availableColors && (
