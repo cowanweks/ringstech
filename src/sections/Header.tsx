@@ -1,114 +1,122 @@
-import "@styles/Header.scss";
-import BrandLogo from "@assets/logo.jpg"
-import { Button } from "@shadcn-ui/button"
+import BrandLogo from "@assets/logo.jpg";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, } from "react";
+import { Button } from "@shadcn-ui/button";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@shadcn-ui/hover-card"
 
 
-function NavBar() {
+const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [showMenu, setShowMenu] = useState(false);
-  const [itemsInCart, setItemsinCart] = useState(0);
-  // const [cartTotal, setCartTotal] = useState(0.00)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-  useEffect(() => {
-    setItemsinCart(2)
-  }, [])
 
   return (
-    <nav id="NavBar" className="flex h-16 items-center justify-between px-4  bg-gradient-to-r from-[#948A30] via-[#3E9161] to-[#707E3E]">
-      <Link to="/" className="no-underline">
-        <img src={BrandLogo} alt="RingsTech" className="h-16 sm:h-16 mr-8 cursor-pointer" />
-      </Link>
-
-      <button onClick={() => setShowMenu(!showMenu)} className="sm:hidden">
-        {showMenu ? (
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-          </svg>
-        )}
-      </button>
-
-      <ul className={`navs flex-col sm:flex sm:flex-row gap-x-8 items-center ${showMenu ? 'block' : 'hidden'}`}>
-        <li className="nav_item mb-0 cursor-pointer text-[#C5C6C7]">
-          <Link to="/shop">SHOP</Link>
-        </li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">SMARTPHONES</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">ACCESSORIES</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">COVERS & PROTECTORS</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/repairs">REPAIRS</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]"><Link to="/shop">LIFESTYLE</Link></li>
-        <li className="nav_item mb-0 text-[#C5C6C7]">
-          <Link to="/trackorder">
+    <nav className="bg-white shadow-md z-10">
+      <div className="container mx-auto px-2 h-16 flex justify-between items-center">
+        <a href="/home">
+          <img src={BrandLogo} alt="Samsung Store" className="h-16" />
+        </a>
+        <div className="hidden md:flex md:h-auto space-x-6">
+          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SMARTPHONES</a>
+          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
+          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS & PROTECTORS</a>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <button className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
+                REPAIRS
+              </button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
+              <div className="flex flex-col">
+                <div className="h-10 border-b mb-2">We Offer the following Services</div>
+                <div className="h-8 border-b mb-2">1: Screen Replacement</div>
+                <div className="h-8 border-b mb-2">2: Battery Replacement</div>
+                <div className="h-8 border-b mb-2">3: Camera Repair & Replacement</div>
+                <div className="h-8 border-b mb-2">4: Charging Port Repair</div>
+                <div className="h-8 border-b mb-2">5: Water Damage Repair</div>
+                <div className="h-8 border-b mb-2">6: Software Troubleshooting</div>
+                <div className="h-8 border-b mb-2">7: Button Repair (power, volume, home button)</div>
+                <div className="h-8">8: Speaker or Microphone Repair</div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+          <Link to="/track" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
             <Button className="flex gap-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
               </svg>
-              <span>TRACK ORDER</span>
+              <span className="">TRACK</span>
             </Button>
           </Link>
-        </li>
-        <li className="inline-flex gap-x-8 items-center mb-0">
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C5C6C7" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mpesa.png" alt="mpesa" />
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 flex flex-col gap-y-4">
+              <span className="text-green-400">PayBill No: <span className="text-red-500">247 247</span></span>
+              <span className="text-green-400">ACcount No: <span className="text-red-500">353 562</span></span>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
             </svg>
           </button>
-          <Link to="/cart">
-            <button className="relative">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#C5C6C7" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-              </svg>
-              {(itemsInCart > 0 && <span className="absolute h-6 w-6 top-[-8px] text-center leading-[15px] bg-red-500 rounded-full text-[#C5C6C7]">{itemsInCart}</span>)}
-            </button>
+        </div>
+      </div>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Link to="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+            SMARTPHONES
           </Link>
-        </li>
-        <li className="nav_item inline-flex gap-x-2 mb-0 cursor-pointer text-[#C5C6C7]">
-          <Link to="/signin" className="text-sm">
-            <Button >SIGNIN</Button>
+          <Link to="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+            ACCESSORIES
           </Link>
-          <Link to="/signup" className="text-sm">
-            <Button >SIGNUP</Button>
+          <Link to="/shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+            COVERS & PROTECTORS
           </Link>
-        </li>
-      </ul>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <button className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+                REPAIRS
+              </button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 flex flex-col gap-y-4">
+              <span className="text-green-400 font-bold">PayBill No: <span className="text-red-500">247 247</span></span>
+              <span className="text-green-400 font-bold">ACcount No: <span className="text-red-500">353 562</span></span>
+            </HoverCardContent>
+          </HoverCard>
+          <Link to="/track" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+            TRACK
+          </Link>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <div className="flex gap-x-4 px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+                <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mpesa.png" alt="mpesa" />
+                <span>PayBill</span>
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 flex flex-col gap-y-4">
+              <span className="text-green-400 font-bold">PayBill No: <span className="text-red-500">247 247</span></span>
+              <span className="text-green-400 font-bold">ACcount No: <span className="text-red-500">353 562</span></span>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
+      </div>
     </nav>
   );
-}
+};
 
 export function Header() {
-
-
   return (
-    <div id="Header" className="sticky top-0 bg-[#027353]" style={{ zIndex: 1 }}>
-
-      <div className="flex items-center h-12 px-2  border-b-[1px] border-[rgba(255,255,254,0.2)]">
-        <ul className="flex items-center gap-x-4">
-          <li className="nav_item mb-0 cursor-pointer
-          text-[#C5C6C7] pr-4 border-r-[1px]">
-            <Link to="tel:+254740801606" className="flex gap-x-2 no-underline" style={{ textDecoration: 'none' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff7701" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-              </svg>
-              <span>+254740801606</span>
-            </Link>
-          </li>
-          <li className="nav_item inline-flex gap-x-2 mb-0 cursor-pointer text-[#C5C6C7]">
-            <Link to="mailto:info@ringstech.com" className="flex gap-x-2" style={{ textDecoration: 'none' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#ff7701" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-              </svg>
-              <span>samsungphonesandspairecentre@gmail.com</span>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
+    <div id="Header" className="sticky top-0 z-20 bg-gray-100">
       <NavBar />
-    </div>);
+    </div>
+  );
 }

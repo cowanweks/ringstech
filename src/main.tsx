@@ -14,7 +14,15 @@ import Admin from '@pages/Admin.tsx';
 
 const router = createBrowserRouter([
   {
+    path: "*",
+    element: <App />,
+  },
+  {
     path: "/",
+    element: <App />,
+  },
+  {
+    path: "/home",
     element: <App />,
   },
   {

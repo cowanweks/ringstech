@@ -1,5 +1,3 @@
-import '@styles/ErrorPage.scss'
-// import { Router, Route } from '@solidjs/router'
 
 
 interface ErrorPageProps {

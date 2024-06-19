@@ -31,7 +31,7 @@ export default function Hero() {
 
 
   return (
-    <div id="Hero">
+    <div id="Hero" className="">
       <Carousel slides={slides} />
     </div>
   );
