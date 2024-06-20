@@ -17,7 +17,7 @@ export default function Mobiles() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/products/?product_category=phone`)
+      .get(`${API_URL}/products/?category=phone`)
       .then((res) => {
         if (Array.isArray(res.data)) {
           setData(res.data);
