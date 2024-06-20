@@ -17,7 +17,7 @@ export default function LifeStyle() {
 	};
 
 	useEffect(() => {
-		axios.get(`${API_URL}/products/?product_category=lifestyle`)
+		axios.get(`${API_URL}/products/?category=lifestyle`)
 			.then(res => {
 				if (Array.isArray(res.data)) {
 					setData(res.data);

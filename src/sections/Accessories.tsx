@@ -18,7 +18,7 @@ export default function Accessories() {
 	};
 
 	useEffect(() => {
-		axios.get(`${API_URL}/products/?product_category=accessory`)
+		axios.get(`${API_URL}/products/?category=accessories`)
 			.then(res => {
 				if (Array.isArray(res.data)) {
 					setData(res.data);
@@ -42,19 +42,19 @@ export default function Accessories() {
 						</button>
 					</div>
 					<ul className={`flex-col md:flex md:flex-row font-medium gap-x-6 absolute md:static w-full md:w-auto bg-white md:bg-transparent ${isOpen ? 'flex' : 'hidden'} md:flex`}>
-						<NavLink onClick={toggleMenu}  to="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
+						<NavLink onClick={toggleMenu} to="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
 							<li className="py-2 md:py-0 px-6 md:px-0">ALL</li>
 						</NavLink>
-						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">GEARS & DEVICES</li>
 						</NavLink>
-						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">AUDIO</li>
 						</NavLink>
-						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">CAMERA & VISUAL</li>
 						</NavLink>
-						<NavLink onClick={toggleMenu}  to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">POWERBANK & CHARGING</li>
 						</NavLink>
 					</ul>
