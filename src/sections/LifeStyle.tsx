@@ -1,5 +1,5 @@
 import ItemCard from "@components/itemcard/ItemCard"
-import { IProduct } from "@defines/index"
+import { ILifeStyle } from "@defines/index"
 import { NavLink } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
@@ -9,7 +9,7 @@ import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
 
 export default function LifeStyle() {
 
-	const [data, setData] = useState<IProduct[]>([]);
+	const [data, setData] = useState<Array<ILifeStyle>>([]);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleMenu = () => {
@@ -65,21 +65,15 @@ export default function LifeStyle() {
 				{items.length > 0 ? items.map((item, index) => (
 					<ItemCard
 						key={index}
-						display={item.display}
-						battery={item.battery}
 						brand={item.brand}
-						cameras={item.cameras}
 						description={item.description}
-						inStock={item.inStock}
+						in_stock={item.in_stock}
 						model={item.model}
-						ram={item.ram}
-						rom={item.rom}
-						processor={item.processor}
-						productCategory={item.productCategory}
-						productName={item.productName}
-						unitPrice={item.unitPrice}
-						productImage={item.productImage}
-						availableColors={item.availableColors} />
+						product_category={item.product_category}
+						product_name={item.product_name}
+						product_unit_price={item.product_unit_price}
+						product_image={item.product_image}
+						available_colors={item.available_colors} />
 				)) : ""}
 			</div>
 			{items.length > 0 ?

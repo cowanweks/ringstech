@@ -8,7 +8,7 @@ import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
 
 
 
-export default function Accessories() {
+export default function CoversProtectors() {
 
 	const [data, setData] = useState<IProduct[]>([]);
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function Accessories() {
 	};
 
 	useEffect(() => {
-		axios.get(`${API_URL}/products/?category=accessory`)
+		axios.get(`${API_URL}/products/?category=covers_protectors`)
 			.then(res => {
 				if (Array.isArray(res.data)) {
 					setData(res.data);
@@ -32,10 +32,10 @@ export default function Accessories() {
 	const items = data.slice(0, 6);
 
 	return (
-		<section id="Accessories" className="min-h-dvh px-4 py-8">
+		<section id="CoversProtectors" className="min-h-dvh px-4 py-8">
 			<div className="bg-white shadow-md">
 				<div className="container mx-auto mb-16 border px-6 py-3 flex justify-between items-center">
-					<h1 className="font-bold text-lg">ACCESSORIES</h1>
+					<h1 className="font-bold text-lg">COVERS & PROTECTORS</h1>
 					<div className="md:hidden z-10">
 						<button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
 							{isOpen ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
@@ -60,7 +60,7 @@ export default function Accessories() {
 					</ul>
 				</div>
 			</div>
-			<div className="accessories grid grid-cols-1 sm:grid-cols-1 sm:items-center
+			<div className="covers_protectors grid grid-cols-1 sm:grid-cols-1 sm:items-center
        md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
 				{items.length > 0 ? items.map((item, index) => (
 					<ItemCard

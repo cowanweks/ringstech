@@ -21,7 +21,6 @@ export default function Mobiles() {
       .then((res) => {
         if (Array.isArray(res.data)) {
           setData(res.data);
-          console.log(data);
         } else {
           console.error("Fetched data is not an array:", res.data);
         }
@@ -71,16 +70,16 @@ export default function Mobiles() {
               brand={item.brand}
               cameras={item.cameras}
               description={item.description}
-              inStock={item.inStock}
+              in_stock={item.in_stock}
               model={item.model}
               ram={item.ram}
               rom={item.rom}
               processor={item.processor}
-              productCategory={item.productCategory}
-              productName={item.productName}
-              unitPrice={item.unitPrice}
-              productImage={item.productImage}
-              availableColors={item.availableColors}
+              product_category={item.product_category}
+              product_name={item.product_name}
+              product_unit_price={item.product_unit_price}
+              product_image={item.product_image}
+              available_colors={item.available_colors}
             />
           ))
           : ""}

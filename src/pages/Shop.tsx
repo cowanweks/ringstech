@@ -14,23 +14,35 @@ import {
 } from '@shadcn-ui/pagination';
 import { useEffect, useState } from 'react';
 import { API_URL } from '@utils/index';
-import axios from 'axios';
+import { useSearchParams } from 'react-router-dom';
+
+
+
 
 export default function Shop() {
   const [data, setData] = useState<IProduct[]>([]);
+  // const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get('category');
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/products/?product_category=phone`)
-      .then((res) => {
-        if (Array.isArray(res.data)) {
-          setData(res.data);
-        } else {
-          console.error('Fetched data is not an array:', res.data);
-        }
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    if (category) {
+      fetchProducts(category);
+    } else {
+
+    }
+  }, [category]);
+
+  const fetchProducts = async (category: string) => {
+    try {
+      const response = await fetch(`${API_URL}/products/?category=${category}`);
+      const data = await response.json();
+      setData(data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
+
 
   return (
     <div className="">
@@ -46,16 +58,16 @@ export default function Shop() {
               brand={item.brand}
               cameras={item.cameras}
               description={item.description}
-              inStock={item.inStock}
+              in_stock={item.in_stock}
               model={item.model}
               ram={item.ram}
               rom={item.rom}
               processor={item.processor}
-              productCategory={item.productCategory}
-              productName={item.productName}
-              unitPrice={item.unitPrice}
-              productImage={item.productImage}
-              availableColors={item.availableColors}
+              product_category={item.product_category}
+              product_name={item.product_name}
+              product_unit_price={item.product_unit_price}
+              product_image={item.product_image}
+              available_colors={item.available_colors}
             />
           ))
           : ''}
