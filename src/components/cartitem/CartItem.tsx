@@ -46,7 +46,7 @@ export default function CartItem({ item }: { item: ICartItem }) {
     <img className='h-1/2' src={item.item_image!} alt="" />
     <div className="description flex flex-col gap-y-2 col-span-3">
       <h2 className='text-black'>{item.item_name}</h2>
-      <p className='text-red-500'>Only {item.in_stock} left in stock</p>
+      <p className='text-red-500'>Only {item.in_stock} items left in stock</p>
         <div className="specifications flex flex-col gap-y-4">
         <p><b>Color</b>{item.item_color}</p>
         <p><b>Description</b>{item.item_description}</p>

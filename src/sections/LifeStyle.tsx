@@ -1,6 +1,5 @@
 import ItemCard from "@components/itemcard/ItemCard"
 import { ILifeStyle } from "@defines/index"
-import { NavLink } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { API_URL } from "@utils/index"
@@ -41,21 +40,21 @@ export default function LifeStyle() {
 						</button>
 					</div>
 					<ul className={`flex-col md:flex md:flex-row font-medium gap-x-6 absolute md:static w-full md:w-auto bg-white md:bg-transparent ${isOpen ? 'flex' : 'hidden'} md:flex`}>
-						<NavLink onClick={toggleMenu} to="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
+						<a onClick={toggleMenu} href="" className="text-[#ff7701] cursor-pointer hover:text-[#ff7701] my-0 leading-10">
 							<li className="py-2 md:py-0 px-6 md:px-0">ALL</li>
-						</NavLink>
-						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						</a>
+						<a onClick={toggleMenu} href="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">GEARS & DEVICES</li>
-						</NavLink>
-						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						</a>
+						<a onClick={toggleMenu} href="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">AUDIO</li>
-						</NavLink>
-						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						</a>
+						<a onClick={toggleMenu} href="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">CAMERA & VISUAL</li>
-						</NavLink>
-						<NavLink onClick={toggleMenu} to="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
+						</a>
+						<a onClick={toggleMenu} href="" className="my-0 leading-10 cursor-pointer hover:text-[#ff7701]">
 							<li className="py-2 md:py-0 px-6 md:px-0">POWERBANK & CHARGING</li>
-						</NavLink>
+						</a>
 					</ul>
 				</div>
 			</div>
@@ -78,8 +77,8 @@ export default function LifeStyle() {
 			</div>
 			{items.length > 0 ?
 				<div className="flex items-center justify-center my-8">
-					<NavLink to="/shop" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
-				hover:bg-white hover:border-blue-500">LOAD MORE PRODUCTS</NavLink>
+					<a href="/shop?category=lifestyle" className="h-14 leading-[12px] p-4 text-xl rounded-none bg-white text-black border-2 border-[#ff7701]
+				hover:bg-white hover:border-blue-500">LOAD MORE PRODUCTS</a>
 				</div> : ""
 			}
 
