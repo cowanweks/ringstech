@@ -45,7 +45,7 @@ const ItemCard = (props: IProduct) => {
             <span className="px-2 py-1 text-center">{formatPrice(props.product_unit_price)}</span>
           )}
         </p>
-        <div className="product-description grid grid-cols-2 gap-2 text-sm text-gray-700 mt-2">
+        <div className="product-description grid grid-cols-1 gap-2 text-sm text-gray-700 mt-2">
           {props.product_category === "phone" && (
             <>
               {props.ram && (
