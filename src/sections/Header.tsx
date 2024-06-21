@@ -1,5 +1,4 @@
 import BrandLogo from "@assets/logo.jpg";
-import { Link } from "react-router-dom";
 import { useState, } from "react";
 import { Button } from "@shadcn-ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@shadcn-ui/hover-card"
@@ -20,9 +19,11 @@ const NavBar = () => {
           <img src={BrandLogo} alt="Samsung Store" className="h-16" />
         </a>
         <div className="hidden md:flex md:h-auto space-x-6">
-          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SMARTPHONES</a>
-          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
-          <a href="/#" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
+          <a href="/shop" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SHOP</a>
+          <a href="/shop?category=phone" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SMARTPHONES</a>
+          <a href="/shop?category=accessory" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
+          <a href="/shop?category=lifestyle" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">LIFESTYLE</a>
+          <a href="/shop?category=covers_protectors" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <button className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
@@ -43,7 +44,12 @@ const NavBar = () => {
               </div>
             </HoverCardContent>
           </HoverCard>
-          <Link to="/track" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
+          <a href="/cart" className="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+          </a>
+          <a href="/track" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
             <Button className="flex gap-x-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -51,7 +57,7 @@ const NavBar = () => {
               </svg>
               <span className="">TRACK</span>
             </Button>
-          </Link>
+          </a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mpesa.png" alt="mpesa" />
@@ -72,15 +78,15 @@ const NavBar = () => {
       </div>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link to="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+          <a href="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
             SMARTPHONES
-          </Link>
-          <Link to="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+          </a>
+          <a href="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
             ACCESSORIES
-          </Link>
-          <Link to="/shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+          </a>
+          <a href="/shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
             COVERS
-          </Link>
+          </a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <button className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
@@ -99,9 +105,15 @@ const NavBar = () => {
               <div className="h-8">8: Speaker or Microphone Repair</div>
             </HoverCardContent>
           </HoverCard>
-          <Link to="/track" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+          <a href="/track" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
             TRACK
-          </Link>
+          </a>
+          <a href="/cart" className="flex gap-x-4 px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+            <span>Cart</span>
+          </a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <button className="flex gap-x-4 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-100">
