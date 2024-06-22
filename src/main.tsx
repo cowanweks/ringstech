@@ -5,7 +5,6 @@ import '@styles/index.scss';
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Cart from '@pages/Cart';
 import Shop from '@pages/Shop';
-import Repairs from '@pages/Repairs'
 import SignIn from '@pages/SignIn';
 import SignUp from '@pages/SignUp';
 import TrackOrder from '@pages/TrackOrder';
@@ -36,10 +35,6 @@ const router = createBrowserRouter([
   {
     path: "/trackorder",
     element: <TrackOrder />,
-  },
-  {
-    path: "/repairs",
-    element: <Repairs />,
   },
   {
     path: "/signin",
