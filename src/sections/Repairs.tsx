@@ -37,11 +37,11 @@ const items = [
 	},
 ];
 
-function ItemsCard(item) {
+function ItemsCard(item: { service: string | undefined, description: string | undefined, image: string | undefined }) {
 	return (
 		<div className="bg-white shadow-lg rounded-lg overflow-hidden">
 			<div className="h-64 overflow-hidden">
-				<img src={item.image} alt={item.service} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+				<img src={item.image} alt={item.service} className="w-fit h-fit object-cover transition-transform duration-500 hover:scale-110" />
 			</div>
 			<div className="p-6">
 				<h3 className="text-xl font-semibold text-gray-800">{item.service?.toUpperCase()}</h3>
