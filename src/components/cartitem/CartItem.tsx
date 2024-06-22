@@ -42,19 +42,19 @@ function QuantityInput() {
 
 export default function CartItem({ item }: { item: ICartItem }) {
 
-  return <div id='CartItem' className="grid grid-cols-1 gap-y-4 md:grid-cols-5 rounded-[4px] bg-white py-8 px-4">
-    <img className='h-1/2' src={item.item_image!} alt="" />
-    <div className="description flex flex-col gap-y-2 col-span-3">
+  return <div id='CartItem' className="grid grid-cols-1 gap-y-6 md:grid-cols-5 rounded-[4px] bg-white py-8 px-4 ">
+    <img className='h-[56.25vw] md:h-1/2' src={item.item_image!} alt="" />
+    <div className="description flex flex-col gap-y-2 col-span-3 px-8">
       <h2 className='text-black'>{item.item_name}</h2>
       <p className='text-red-500'>Only {item.in_stock} items left in stock</p>
         <div className="specifications flex flex-col gap-y-4">
-        <p><b>Color</b>{item.item_color}</p>
-        <p><b>Description</b>{item.item_description}</p>
+        <p><b>Color: </b>{item.item_color}</p>
+        <p><b>Description: </b>{item.item_description}</p>
           <p><b>Brand: </b> {item.brand}</p>
           <p><b>Model: </b> {item.model}</p>
           <p className='flex items-center gap-x-2'><b>Quantity</b>: <QuantityInput /></p>
         </div>
      </div>
-    <span className='font-bold text-right'>Kshs. {item.item_price?.toFixed(2)}</span>
+    <span className='font-bold text-right text-gray-700'>Kshs. {item.item_price?.toFixed(2)}</span>
   </div>
 }
