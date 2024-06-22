@@ -1,4 +1,4 @@
-import BrandLogo from "@assets/logo.jpg";
+import BrandLogo from "@public/logo.jpg";
 import { useState, } from "react";
 import { Button } from "@shadcn-ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@shadcn-ui/hover-card"
@@ -24,6 +24,7 @@ const NavBar = () => {
           <a href="/shop?category=accessory" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
           <a href="/shop?category=lifestyle" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">LIFESTYLE</a>
           <a href="/shop?category=covers_protectors" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
+          <a href="/#Spares" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">SPARES</a>
           <HoverCard>
             <HoverCardTrigger asChild>
               <a href="/#Repairs" className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
