@@ -34,7 +34,7 @@ const ItemCard = (props: IProduct) => {
       <img
         src={`${API_URL}/images/?id=${props.product_image}`}
         alt="Product Image"
-        className="product-image w-full h-64 object-cover"
+        className="product-image w-full h-full bg-cover object-cover"
       />
       <div className="product-details p-4">
         <p className="product-title text-xl font-bold text-gray-800">
