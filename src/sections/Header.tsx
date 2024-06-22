@@ -137,7 +137,7 @@ const NavBar = () => {
             </HoverCardTrigger>
             <HoverCardContent className="w-80 flex flex-col gap-y-4">
               <span className="text-green-400 font-bold">PayBill No: <span className="text-red-500">247 247</span></span>
-              <span className="text-green-400 font-bold">ACcount No: <span className="text-red-500">353 562</span></span>
+              <span className="text-green-400 font-bold">Account No: <span className="text-red-500">353 562</span></span>
             </HoverCardContent>
           </HoverCard>
         </div>
