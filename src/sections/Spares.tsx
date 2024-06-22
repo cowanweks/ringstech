@@ -2,44 +2,48 @@ import { useState } from "react"
 import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
 import { Button } from "@shadcn-ui/button"
 import { FaWhatsapp as WhatsappIcon } from "react-icons/fa6"
-
-import Image1 from "@public/spares/photo_2024-06-22_13-01-42 (2).jpg"
-import Image2 from "@public/spares/photo_2024-06-22_13-01-42.jpg"
-import Image3 from "@public/spares/photo_2024-06-22_13-01-43.jpg"
-import Image4 from "@public/spares/photo_2024-06-22_13-01-44 (2).jpg"
-import Image5 from "@public/spares/photo_2024-06-22_13-01-44 (3).jpg"
-import Image6 from "@public/spares/photo_2024-06-22_13-01-44.jpg"
-import Image7 from "@public/spares/photo_2024-06-22_13-01-46.jpg"
+import Image1 from "@public/spares/Samsung-Galaxy-A03S-Screen-Replacemen-300x300.jpg"
+import Image2 from "@public/spares/Samsung-Galaxy-A05s-Screen-Replacement-300x300.jpg"
+import Image3 from "@public/spares/Samsung-Galaxy-A13-Screen-Replacement-300x300.jpg"
+import Image4 from "@public/spares/Samsung-Galaxy-A14-Screen-Replacement-.jpg"
+import Image5 from "@public/spares/Samsung-Galaxy-A14-Screen-Replacement-300x300.jpg"
+import Image6 from "@public/spares/Samsung-Galaxy-A32-Flex-cable-300x300.jpg"
+import Image7 from "@public/spares/Samsung-Galaxy-J7-Prime-Screen-Replacement-300x300.jpg"
+import Image8 from "@public/spares/Samsung-Galaxy-S10-Screen-Replacement-300x300 (1).jpeg"
+import Image9 from "@public/spares/Samsung-Galaxy-S10-Screen-Replacement-300x300.jpeg"
+import Image10 from "@public/spares/Samsung-Galaxy-S8-Screen-Replacement-300x300.jpg"
+import Image11 from "@public/spares/spare 1.jpeg"
 
 
 const items = [
 	{
 		image: Image1,
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
 		image: Image2,
-		service: "",
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
 		image: Image3,
-		service: "",
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
 		image: Image4,
-		service: "",
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
 		image: Image5,
-		service: "",
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
 		image: Image6,
-		service: "",
+		service: "Samsung smartphones spare parts",
 		description: ""
 	},
 	{
@@ -47,6 +51,26 @@ const items = [
 		service: "Samsung smartphones spare parts",
 		description: ""
 	},
+	{
+		image: Image8,
+		service: "Samsung smartphones spare parts",
+		description: ""
+	},
+	{
+		image: Image9,
+		service: "Samsung smartphones spare parts",
+		description: ""
+	},
+	{
+		image: Image10,
+		service: "Samsung smartphones spare parts",
+		description: ""
+	},
+	{
+		image: Image11,
+		service: "Samsung smartphones spare parts",
+		description: ""
+	}
 ]
 
 function ItemsCard(item: { service: string | undefined, description: string | undefined, image: string | undefined }) {
