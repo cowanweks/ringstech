@@ -1,6 +1,5 @@
 import { FaEnvelope, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { HiPhone } from "react-icons/hi2"
-import { Link } from "react-router-dom"
 
 
 
@@ -20,49 +19,45 @@ export default function Footer() {
 			<div className="categories flex-1">
 				<h2 className="text-lg text-white">PRODUCT CATEGORIES</h2>
 				<ul className='flex flex-col gap-2 pt-2'>
-					<li className=""><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Accessories</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Camera & Visual</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Covers & Protectors</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Devices & Audio</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Lifestyle</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Powerbank & Charging</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Smartphones</Link></li>
-					<li><Link style={{ textDecoration: 'none' }} to="" className='text-[#ff7701] hover:text-white'>Smartwatches</Link></li>
+					<li className=""><a style={{ textDecoration: 'none' }} href="/shop?category=phone" className='text-[#ff7701] hover:text-white'>SmartPhones</a></li>
+					<li className=""><a style={{ textDecoration: 'none' }} href="/shop?category=accessory" className='text-[#ff7701] hover:text-white'>Accessories</a></li>
+					<li><a style={{ textDecoration: 'none' }} href="/shop?category=covers_protectors" className='text-[#ff7701] hover:text-white'>Covers & Protectors</a></li>
+					<li><a style={{ textDecoration: 'none' }} href="/shop?category=lifestyle" className='text-[#ff7701] hover:text-white'>Lifestyle</a></li>
 				</ul>
 			</div>
 			<div className="contact flex-1">
 				<h2 className="text-lg text-white">CONTACT US</h2>
 				<ul className='flex flex-col gap-2 pt-2'>
 					<li className="">
-						<Link target='_blank' to="tel:+254740801606" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
+						<a target='_blank' href="tel:+254740801606" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							< HiPhone />
 							<span className="">+254 740 801 606</span>
-						</Link>
+						</a>
 					</li>
 					<li >
-						<Link target='_blank' to={message}
+						<a target='_blank' href={message}
 							style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							<FaEnvelope />
 							<span className="">samsungphonesandspairecentre@gmail.com</span>
-						</Link>
+						</a>
 					</li>
 					<li>
-						<Link target='_blank' to="https://facebook.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
+						<a target='_blank' href="https://facebook.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							<FaXTwitter />
-							<span className="">@ringstech</span>
-						</Link>
+							<span className="">@samsungphoneandsparecenter</span>
+						</a>
 					</li>
 					<li>
-						<Link target='_blank' to="https://instagram.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
+						<a target='_blank' href="https://instagram.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							<FaInstagram />
 							<span className="">Instagram</span>
-						</Link>
+						</a>
 					</li>
 					<li>
-						<Link target='_blank' to="https://linkedin.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
+						<a target='_blank' href="https://linkedin.com" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							<FaLinkedin />
 							<span className="">LinkedIn</span>
-						</Link>
+						</a>
 					</li>
 				</ul>
 			</div>
