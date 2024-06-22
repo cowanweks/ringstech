@@ -42,8 +42,8 @@ function QuantityInput() {
 
 export default function CartItem({ item }: { item: ICartItem }) {
 
-  return <div id='CartItem' className="grid grid-cols-1 gap-y-4 md:grid-cols-5 rounded-[4px] bg-white py-8 px-4">
-    <img className='h-1/2' src={item.item_image!} alt="" />
+  return <div id='CartItem' className="grid grid-cols-1 gap-y-6 md:grid-cols-5 rounded-[4px] bg-white py-8 px-4 ">
+    <img className='h-[56.25vw] md:h-1/2' src={item.item_image!} alt="" />
     <div className="description flex flex-col gap-y-2 col-span-3">
       <h2 className='text-black'>{item.item_name}</h2>
       <p className='text-red-500'>Only {item.in_stock} items left in stock</p>
