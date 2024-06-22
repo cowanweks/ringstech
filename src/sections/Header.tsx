@@ -94,11 +94,14 @@ const NavBar = () => {
           <a href="/shop?category=covers_protectors" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
             COVERS
           </a>
+          <a href="/#Spares" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+            SPARES
+          </a>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <button className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+              <a href="/#Repairs" className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
                 REPAIRS
-              </button>
+              </a>
             </HoverCardTrigger>
             <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
               <div className="h-10 border-b mb-2">We Offer the following Services</div>
