@@ -31,11 +31,13 @@ const ItemCard = (props: IProduct) => {
 
   return (
     <div className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
-      <img
-        src={`${API_URL}/images/?id=${props.product_image}`}
-        alt="Product Image"
-        className="product-image w-full h-full bg-cover object-cover"
-      />
+      <div className="h-[200px]">
+        <img
+          src={`${API_URL}/images/?id=${props.product_image}`}
+          alt="Product Image"
+          className="product-image transition-transform duration-500 hover:scale-110 w-fit max-h-full max-w-full"
+        />
+      </div>
       <div className="product-details p-4">
         <p className="product-title text-xl font-bold text-gray-800">
           {props.product_name}
