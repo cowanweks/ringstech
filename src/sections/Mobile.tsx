@@ -31,7 +31,7 @@ export default function Mobiles() {
   const items = data.slice(0, 6)
 
   return (
-    <section id="Mobiles" className="min-h-dvh px-4 py-8">
+    <section id="Mobiles" className="min-h-dvh px-4 py-8 bg-gray-200">
       <div className="bg-white shadow-md">
         <div className="container mx-auto mb-16 border z-30 px-6 py-3 flex justify-between items-center">
           <h1 className="font-bold text-lg">SMARTPHONES</h1>

@@ -30,7 +30,7 @@ export default function LifeStyle() {
 	const items = data.slice(0, 6);
 
 	return (
-		<section id="LifeStyle" className="min-h-dvh px-4 py-16">
+		<section id="LifeStyle" className="min-h-dvh px-4 py-16 bg-gray-200">
 			<div className="bg-white shadow-md">
 				<div className="container mx-auto mb-16 border px-6 py-3 flex justify-between items-center">
 					<h1 className="font-bold text-lg">LIFESTYLE</h1>
