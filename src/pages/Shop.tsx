@@ -45,7 +45,7 @@ export default function Shop() {
 
 
   return (
-    <div className="">
+    <div id="Shop" className="bg-gray-200">
       <Header />
 
       <div className="grid grid-cols-1 md:grid-cols-3 pt-12 items-center">

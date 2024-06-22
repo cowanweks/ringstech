@@ -86,7 +86,7 @@ export default function LifeStyle() {
 	};
 
 	return (
-		<section id="Repairs" className="min-h-screen px-4 py-16 bg-gray-100">
+		<section id="Repairs" className="min-h-screen px-4 py-16 bg-gray-200">
 			<div className="bg-white shadow-md">
 				<div className="container mx-auto mb-16 border px-6 py-3 flex justify-between items-center">
 					<h1 className="font-bold text-lg">REPAIRS</h1>
