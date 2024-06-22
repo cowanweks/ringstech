@@ -51,7 +51,7 @@ export default function Cart() {
           <div className="flex flex-col gap-4 min-w-32 max-h32 p-10 items-center justify-center rounded
 
             bg-gray-100">
-            <h2 className='text-black'>Subtotal ({items.length} item{items.length !== 1 ? 's' : ''}): <span className='font-bold'>${subtotal.toFixed(2)}</span></h2>
+            <h2 className='text-black text-nowrap'>Subtotal ({items.length} item{items.length !== 1 ? 's' : ''}): <span className='font-bold'>${subtotal.toFixed(2)}</span></h2>
             <Button className='w-full hover:scale-105'>Checkout</Button>
           </div>
         </div>
