@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <nav className="bg-white shadow-md z-10">
       <div className="container mx-auto px-2 h-16 flex justify-between items-center">
-        <a href="/home">
+        <a href="/">
           <img src={BrandLogo} alt="Samsung Store" className="h-16" />
         </a>
         <div className="hidden md:flex md:h-auto space-x-6">
@@ -26,9 +26,9 @@ const NavBar = () => {
           <a href="/shop?category=covers_protectors" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <button className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
+              <a href="/#Repairs" className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
                 REPAIRS
-              </button>
+              </a>
             </HoverCardTrigger>
             <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
               <div className="flex flex-col">

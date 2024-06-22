@@ -41,11 +41,11 @@ function ItemsCard(item: { service: string | undefined, description: string | un
 	return (
 		<div className="bg-white shadow-lg rounded-lg overflow-hidden">
 			<div className="h-64 overflow-hidden">
-				<img src={item.image} alt={item.service} className="w-fit h-fit object-cover transition-transform duration-500 hover:scale-110" />
+				<img src={item?.image} alt={item?.service} className="w-fit h-fit object-cover transition-transform duration-500 hover:scale-110" />
 			</div>
 			<div className="p-6">
-				<h3 className="text-xl font-semibold text-gray-800">{item.service?.toUpperCase()}</h3>
-				<p className="text-gray-600 mt-2">{item.description}</p>
+				<h3 className="text-xl font-semibold text-gray-800">{item?.service?.toUpperCase()}</h3>
+				<p className="text-gray-600 mt-2">{item?.description}</p>
 				<div className="mt-4 flex gap-x-4 justify-center">
 					<a href="tel:+254724000144">
 						<Button className="flex items-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
@@ -139,14 +139,14 @@ export default function LifeStyle() {
 			</div>
 
 			<div className="accessories grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{items.map((item, index) => (
+				{items.length > 0 ? items.map((item, index) => (
 					<ItemsCard
-						service={item.service}
-						image={item.image}
-						description={item.description}
+						service={item?.service}
+						image={item?.image}
+						description={item?.description}
 						key={index}
 					/>
-				))}
+				)) : ""}
 			</div>
 		</section>
 	);
