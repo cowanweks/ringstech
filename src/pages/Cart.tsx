@@ -29,6 +29,7 @@ function getCartTotal(cart: Array<ICartItem>) {
 export default function Cart() {
 
   const cartId = Cookies.get("cart_id")
+
   const [subTotal, setSubTotal] = useState(0.0)
   const [cartItems, setCartItems] = useState([])
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -69,13 +70,14 @@ export default function Cart() {
     data.append("phone_number", form.phone_number);
     data.append("mpesa_number", form.mpesa_number);
 
+
     fetch(`${API_URL}/cart/checkout?cart_id=${cartId}`, {
       method: "POST",
       body: data
     })
       .then((res) => res.json())
       .then(data => {
-        
+
         console.log(data)
       })
       .catch(err => console.error(err))
