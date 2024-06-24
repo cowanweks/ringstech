@@ -64,6 +64,7 @@ export default function CoversProtectors() {
 				{items.length > 0 ? items.map((item, index) => (
 					<ItemCard
 						key={index}
+						product_id={item.product_id}
 						display={item.display}
 						battery={item.battery}
 						brand={item.brand}

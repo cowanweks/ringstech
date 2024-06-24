@@ -48,7 +48,7 @@ export default function Shop() {
     <div id="Shop" className="bg-gray-200">
       <Header />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 pt-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 pt-12 items-center">
         {data.length > 0
           ? data.map((item, index) => (
             <ItemCard

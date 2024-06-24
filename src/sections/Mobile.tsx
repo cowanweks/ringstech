@@ -64,6 +64,7 @@ export default function Mobiles() {
           ? items.map((item, index) => (
             <ItemCard
               key={index}
+              product_id={item.product_id}
               display={item.display}
               battery={item.battery}
               brand={item.brand}

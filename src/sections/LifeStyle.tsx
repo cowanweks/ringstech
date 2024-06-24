@@ -64,6 +64,7 @@ export default function LifeStyle() {
 				{items.length > 0 ? items.map((item, index) => (
 					<ItemCard
 						key={index}
+						product_id={item.product_id}
 						brand={item.brand}
 						description={item.description}
 						in_stock={item.in_stock}
