@@ -16,20 +16,18 @@ import Cookies from 'js-cookie';
 
 function createCart() {
 
-  if (Cookies.get("cart_id")) {
+  if (!Cookies.get("cart_id")) {
 
     fetch(`${API_URL}/create_cart`, {
       method: "GET"
     }).then(res => res.json())
       .then(data => {
-        Cookies.remove("cart_id")
 
         Cookies.set("cart_id", data.cart_id)
       })
       .catch(err => console.log(err))
   }
 
-  console.log("Cart already exists!")
 }
 
 createCart()
