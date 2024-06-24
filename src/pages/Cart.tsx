@@ -4,18 +4,33 @@ import Footer from '@sections/Footer'
 import { Button } from '@shadcn-ui/button'
 import CartItem from '@components/cartitem/CartItem'
 import { useEffect, useState } from 'react'
-import { API_URL } from '@utils/index'
+import { API_URL, formatPrice } from '@utils/index'
 import Cookies from 'js-cookie';
 import { Input } from '@shadcn-ui/input'
 import { Label } from '@shadcn-ui/label'
+import { ICartItem } from '@defines/index'
+
+
+function getCartTotal(cart: Array<ICartItem>) {
+
+  let cartTotal = 0.0;
+
+  cart.map(item => {
+    cartTotal += item.quantity * item.product_unit_price;
+  })
+
+  // console.log(cart)
+  // console.log(cartTotal)
+
+  return cartTotal;
+}
 
 
 export default function Cart() {
 
-  const subTotal = 0.0
-  // const [subTotal, setSubTotal] = useState(0.0)
+  const cartId = Cookies.get("cart_id")
+  const [subTotal, setSubTotal] = useState(0.0)
   const [cartItems, setCartItems] = useState([])
-  const [cartId, setCartId] = useState('');
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
   const [form, setForm] = useState({
@@ -42,13 +57,25 @@ export default function Cart() {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
+    var data = new FormData();
+    data.append("first_name", form.first_name);
+    data.append("middle_name", form.middle_name);
+    data.append("last_name", form.last_name);
+    data.append("street_address", form.street_address);
+    data.append("city", form.city);
+    data.append("zip_code", form.zip_code);
+    data.append("state_or_province", form.state_or_province);
+    data.append("email_address", form.email_address);
+    data.append("phone_number", form.phone_number);
+    data.append("mpesa_number", form.mpesa_number);
+
     fetch(`${API_URL}/cart/checkout?cart_id=${cartId}`, {
       method: "POST",
-      body: JSON.stringify(form)
+      body: data
     })
       .then((res) => res.json())
       .then(data => {
-        setCartItems(data)
+        
         console.log(data)
       })
       .catch(err => console.error(err))
@@ -61,18 +88,13 @@ export default function Cart() {
 
 
   useEffect(() => {
-    const cart_id = Cookies.get("cart_id");
-    setCartId(cart_id!)
-
-  }, [])
-
-  useEffect(() => {
     fetch(`${API_URL}/cart?cart_id=${cartId}`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then(data => {
         setCartItems(data)
+        setSubTotal(getCartTotal(data))
       })
       .catch(err => console.error(err))
   })
@@ -94,7 +116,9 @@ export default function Cart() {
           <form onSubmit={handleSubmit} className='flex flex-col gap-y-6'>
             <div className="flex flex-col gap-4 min-w-32 max-h32 p-10 items-center justify-center rounded
             bg-gray-100">
-              <h2 className='text-black text-nowrap'>Subtotal ({cartItems.length} item{cartItems.length !== 1 ? 's' : ''}): <span className='font-bold'>${subTotal.toFixed(2)}</span></h2>
+              <h2 className='text-black text-nowrap'>
+                Subtotal ({cartItems.length} item{cartItems.length !== 1 ? 's' : ''}):
+                <span className='font-bold'>{formatPrice(subTotal)}</span></h2>
               <Button type='submit' className='w-full hover:scale-105' disabled={isCartEmpty}>Checkout</Button>
             </div>
 

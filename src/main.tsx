@@ -16,7 +16,7 @@ import Cookies from 'js-cookie';
 
 function createCart() {
 
-  if (!Cookies.get("cart_id")) {
+  if (Cookies.get("cart_id") == undefined) {
 
     fetch(`${API_URL}/create_cart`, {
       method: "GET"
