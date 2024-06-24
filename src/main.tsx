@@ -10,6 +10,24 @@ import SignUp from '@pages/SignUp';
 import TrackOrder from '@pages/TrackOrder';
 import Checkout from '@pages/Checkout.tsx';
 import Admin from '@pages/Admin.tsx';
+import ProductPage from '@pages/Product.tsx';
+import { API_URL } from '@utils/index.ts';
+import Cookies from 'js-cookie';
+
+function createCart() {
+
+  if (!Cookies.get("cart_id")) {
+
+    fetch(`${API_URL}/create_cart`, {
+      method: "GET"
+    }).then(res => res.json())
+      .then(data => Cookies.set("cart_id", data.cart_id))
+      .catch(err => console.log(err))
+  }
+  console.log("Cart already exists!")
+}
+
+createCart()
 
 const router = createBrowserRouter([
   {
@@ -51,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+  },
+  {
+    path: "/product",
+    element: <ProductPage />,
   },
 ]);
 
