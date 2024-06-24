@@ -24,7 +24,6 @@ async function addToCart(product_id: string) {
 function ProductInformation() {
 
 	const { state } = useLocation();
-	console.log(state)
 
 	return <section className="grid grid-cols-1 md:grid-cols-3 min-h-dvh bg-white">
 		<img src={`${API_URL}/images/?id=${state.product_image}`} alt="" className="" />

@@ -3,12 +3,12 @@ export interface ICartItem {
   brand: string,
   model: string,
   quantity: number,
-  item_name: string,
-  item_color: string,
-  item_image: string,
+  product_name: string,
+  color: string,
+  product_image: string,
   in_stock: number,
-  item_price: number,
-  item_description: string
+  product_unit_price: number,
+  description: string
 }
 
 export interface IOrder {
