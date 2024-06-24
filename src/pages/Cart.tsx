@@ -76,6 +76,7 @@ export default function Cart() {
 
     fetch(`${API_URL}/cart/checkout?cart_id=${cartId}`, {
       method: "POST",
+      headers: headers,
       body: data
     })
       .then((res) => res.json())
