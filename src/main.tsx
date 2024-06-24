@@ -27,7 +27,7 @@ function createCart() {
   console.log("Cart already exists!")
 }
 
-// createCart()
+createCart()
 
 const router = createBrowserRouter([
   {
