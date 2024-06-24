@@ -94,7 +94,6 @@ export default function Cart() {
 
           <form onSubmit={handleSubmit} className='flex flex-col gap-y-6'>
             <div className="flex flex-col gap-4 min-w-32 max-h32 p-10 items-center justify-center rounded
-
             bg-gray-100">
               <h2 className='text-black text-nowrap'>Subtotal ({cartItems.length} item{cartItems.length !== 1 ? 's' : ''}): <span className='font-bold'>${subTotal.toFixed(2)}</span></h2>
               <Button type='submit' className='w-full hover:scale-105' disabled={isCartEmpty}>Checkout</Button>
@@ -102,44 +101,44 @@ export default function Cart() {
 
             <h2>Shipping Information</h2>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="firstName" className='py-2'>First Name</Label>
-              <Input id="firstName" name="firstName" value={form.first_name} onChange={handleChange} />
+              <Label htmlFor="first_name" className='py-2'>First Name</Label>
+              <Input id="first_name" name="first_name" value={form.first_name} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="middleName" className='py-2'>Middle Name</Label>
-              <Input id="middleName" name="middleName" value={form.middle_name} onChange={handleChange} />
+              <Label htmlFor="middle_name" className='py-2'>Middle Name</Label>
+              <Input id="middle_name" name="middle_name" value={form.middle_name} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="lastName" className='py-2'>Last Name</Label>
-              <Input id="lastName" name="lastName" value={form.last_name} onChange={handleChange} />
+              <Label htmlFor="last_name" className='py-2'>Last Name</Label>
+              <Input id="last_name" name="last_name" value={form.last_name} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="streetAddress" className='py-2'>Street Address</Label>
-              <Input id="streetAddress" name="streetAddress" value={form.street_address} onChange={handleChange} />
+              <Label htmlFor="street_address" className='py-2'>Street Address</Label>
+              <Input id="street_address" name="street_address" value={form.street_address} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="stateOrProvince" className='py-2'>State or Province</Label>
-              <Input id="stateOrProvince" name="stateOrProvince" value={form.state_or_province} onChange={handleChange} />
+              <Label htmlFor="state_or_province" className='py-2'>State or Province</Label>
+              <Input id="state_or_province" name="state_or_province" value={form.state_or_province} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
               <Label htmlFor="city" className='py-2'>City</Label>
               <Input id="city" name="city" value={form.city} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="zipCode" className='py-2'>Zip Code</Label>
-              <Input id="zipCode" name="zipCode" value={form.zip_code} onChange={handleChange} />
+              <Label htmlFor="zip_code" className='py-2'>Zip Code</Label>
+              <Input id="zip_code" name="zip_code" value={form.zip_code} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="emailAddress" className='py-2'>Email Address</Label>
-              <Input id="emailAddress" name="emailAddress" value={form.email_address} onChange={handleChange} />
+              <Label htmlFor="email_address" className='py-2'>Email Address</Label>
+              <Input id="email_address" name="email_address" value={form.email_address} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="phoneNumber" className='py-2'>Phone Number</Label>
-              <Input id="phoneNumber" name="phoneNumber" value={form.phone_number} onChange={handleChange} />
+              <Label htmlFor="phone_number" className='py-2'>Phone Number</Label>
+              <Input id="phone_number" name="phone_number" value={form.phone_number} onChange={handleChange} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Label htmlFor="mpesaNumber" className='py-2'>Mpesa Number</Label>
-              <Input id="mpesaNumber" name="mpesaNumber" placeholder='Example, 25412345678' value={form.mpesa_number} onChange={handleChange} />
+              <Label htmlFor="mpesa_number" className='py-2'>Mpesa Number</Label>
+              <Input id="mpesa_number" name="mpesa_number" placeholder='Example, 25412345678' value={form.mpesa_number} onChange={handleChange} />
             </div>
           </form>
 
