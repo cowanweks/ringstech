@@ -58,7 +58,9 @@ export default function Cart() {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
+    let headers = new Headers();
     var data = new FormData();
+
     data.append("first_name", form.first_name);
     data.append("middle_name", form.middle_name);
     data.append("last_name", form.last_name);
@@ -70,6 +72,7 @@ export default function Cart() {
     data.append("phone_number", form.phone_number);
     data.append("mpesa_number", form.mpesa_number);
 
+    headers.append('Access-Control-Allow-Origin', 'https://samsungrepair-backend-35d7356462b8.herokuapp.com')
 
     fetch(`${API_URL}/cart/checkout?cart_id=${cartId}`, {
       method: "POST",
