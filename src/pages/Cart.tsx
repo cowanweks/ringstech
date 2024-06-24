@@ -67,15 +67,15 @@ export default function Cart() {
   }, [])
 
   useEffect(() => {
-    fetch(`${API_URL}/cart?cart_id=${cartId}`, {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then(data => {
-        setCartItems(data)
-        console.log(data)
-      })
-      .catch(err => console.error(err))
+    // fetch(`${API_URL}/cart?cart_id=${cartId}`, {
+    //   method: "GET",
+    // })
+    //   .then((res) => res.json())
+    //   .then(data => {
+    //     setCartItems(data)
+    //     console.log(data)
+    //   })
+    //   .catch(err => console.error(err))
   })
 
 
