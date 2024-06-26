@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 import { twMerge } from "tailwind-merge";
 
 
-
 let API_URL: string;
 
 // API_URL = 'http://127.0.0.1:3000/ringstech/api/v1'
@@ -26,34 +25,49 @@ export const formatPrice = (price: number) => {
 
 
 export async function createCart() {
-
   const cart_id = Cookies.get("cart_id");
 
-  if (Cookies.get("cart_id") != undefined) {
+  if (cart_id) {
+    try {
+      const checkResponse = await fetch(`${API_URL}/check_cart?cart_id=${cart_id}`, { method: "GET" });
 
-          fetch(`${API_URL}/check_cart?cart_id=${cart_id}`,{ method: "GET"})
-          .then(res=> res.json()).catch(error => {
-
-              fetch(`${API_URL}/create_cart`, { method: "GET"}).then(res.json()).then(res=>{
-
-                  Cookies.set("cart_id", res.cart_id)
-
-              }).catch(error => {
-
-                  throw new Error(`HTTP error! status: ${response.status} - ${response.body}`);
-               })
-          })
-
-    }else {
-
-    fetch(`${API_URL}/create_cart`, { method: "GET"}).catch(error => {
-
-      throw new Error(`HTTP error! status: ${response.status} - ${response.body}`);
-    })
-
-    const data = await response.json()
-
-    Cookies.set("cart_id", data.cart_id)
-
+      if (checkResponse.ok) {
+        const checkData = await checkResponse.json();
+        if (!checkData.exists) {
+          // If cart ID does not exist in database, create a new one
+          await createNewCart();
+        }
+      } else {
+        // If the API call fails, create a new cart
+        await createNewCart();
+      }
+    } catch (error) {
+      console.error('Error checking cart:', error);
+      // If there's an error checking the cart, create a new one
+      await createNewCart();
     }
+  } else {
+    // If no cart ID exists in cookies, create a new one
+    await createNewCart();
+  }
 }
+
+async function createNewCart() {
+  try {
+    const createResponse = await fetch(`${API_URL}/create_cart`, { method: "GET" });
+
+    if (createResponse.ok) {
+      const createData = await createResponse.json();
+      if (createData.cart_id) {
+        Cookies.set("cart_id", createData.cart_id);
+      } else {
+        console.error('No cart_id in response');
+      }
+    } else {
+      console.error('Failed to create new cart:', createResponse.statusText);
+    }
+  } catch (error) {
+    console.error('Error creating new cart:', error);
+  }
+}
+

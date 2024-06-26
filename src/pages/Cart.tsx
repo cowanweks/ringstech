@@ -54,7 +54,7 @@ export default function Cart() {
 
     const cart_id = Cookies.get("cart_id")
 
-    setCartId(cart_id);
+    setCartId(cart_id ?? '');
 
   }, [cartId])
 
