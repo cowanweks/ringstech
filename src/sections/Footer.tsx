@@ -29,9 +29,9 @@ export default function Footer() {
 				<h2 className="text-lg text-white">CONTACT US</h2>
 				<ul className='flex flex-col gap-2 pt-2'>
 					<li className="">
-						<a target='_blank' href="tel:+254740801606" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
+						<a target='_blank' href="tel:+254724000144" style={{ textDecoration: 'none' }} className='flex items-center gap-x-2 text-[#ff7701] hover:text-white'>
 							< HiPhone />
-							<span className="">+254 740 801 606</span>
+							<span className="">+254 724 000 144</span>
 						</a>
 					</li>
 					<li >

@@ -27,30 +27,33 @@ export const formatPrice = (price: number) => {
 
 export async function createCart() {
 
+  const cart_id = Cookies.get("cart_id");
 
   if (Cookies.get("cart_id") != undefined) {
 
-      const response = await fetch(`${API_URL}/check_cart?`,{ method: "GET"})
+          fetch(`${API_URL}/check_cart?cart_id=${cart_id}`,{ method: "GET"})
+          .then(res=> res.json()).catch(error => {
 
-      if(!response.ok){
+              fetch(`${API_URL}/create_cart`, { method: "GET"}).then(res.json()).then(res=>{
 
-        Cookies.set("cart_id", "")
-      }
-  }
+                  Cookies.set("cart_id", res.cart_id)
 
-  const response = await fetch(`${API_URL}/create_cart`, {
-      method: "GET"
-    })
+              }).catch(error => {
 
-    if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status} - ${response.body}`);
+               })
+          })
+
+    }else {
+
+    fetch(`${API_URL}/create_cart`, { method: "GET"}).catch(error => {
+
       throw new Error(`HTTP error! status: ${response.status} - ${response.body}`);
-    }
+    })
 
     const data = await response.json()
 
     Cookies.set("cart_id", data.cart_id)
 
-    return data.cart_id;
-
-  return Cookies.get("cart_id");
+    }
 }

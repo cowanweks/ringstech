@@ -4,7 +4,7 @@ import Footer from '@sections/Footer'
 import { Button } from '@shadcn-ui/button'
 import CartItem from '@components/cartitem/CartItem'
 import { useEffect, useState } from 'react'
-import { API_URL, createCart, formatPrice } from '@utils/index'
+import { API_URL, formatPrice } from '@utils/index'
 import Cookies from 'js-cookie';
 import { Input } from '@shadcn-ui/input'
 import { Label } from '@shadcn-ui/label'
@@ -45,29 +45,32 @@ export default function Cart() {
     mpesa_number: ''
   });
 
+    useEffect(() => {
 
-
-  useEffect(() => {
-    setIsCartEmpty(cartItems.length === 0);
-  }, [cartItems]);
-
-  useEffect(() => {
+    /**
+     * Get and Set Cart ID
+     *
+    */
 
     const cart_id = Cookies.get("cart_id")
 
-    if (cart_id == undefined) {
-
-      createCart();
-    }
-
-    setCartId(cart_id!)
+    setCartId(cart_id);
 
   }, [cartId])
 
 
   useEffect(() => {
 
+    setIsCartEmpty(cartItems.length === 0);
+
+  }, [cartItems]);
+
+
+
+  useEffect(() => {
+
     const fetchCartData = async () => {
+      // console.log(cartId)
 
       try {
 
