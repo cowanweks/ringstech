@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 
 let API_URL: string;
 
-// API_URL = 'http://127.0.0.1:3000/ringstech/api/v1'
+API_URL = 'http://127.0.0.1:3000/ringstech/api/v1'
 
 API_URL = 'https://samsungrepair-backend-35d7356462b8.herokuapp.com/ringstech/api/v1'
 
@@ -27,9 +27,18 @@ export const formatPrice = (price: number) => {
 
 export async function createCart() {
 
-  if (Cookies.get("cart_id") == undefined) {
 
-    const response = await fetch(`${API_URL}/create_cart`, {
+  if (Cookies.get("cart_id") != undefined) {
+
+      const response = await fetch(`${API_URL}/check_cart?`,{ method: "GET"})
+
+      if(!response.ok){
+
+        Cookies.set("cart_id", "")
+      }
+  }
+
+  const response = await fetch(`${API_URL}/create_cart`, {
       method: "GET"
     })
 
@@ -42,9 +51,6 @@ export async function createCart() {
     Cookies.set("cart_id", data.cart_id)
 
     return data.cart_id;
-
-  }
-
 
   return Cookies.get("cart_id");
 }
