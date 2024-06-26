@@ -20,28 +20,32 @@ import { useSearchParams } from 'react-router-dom';
 
 
 export default function Shop() {
+
+
   const [data, setData] = useState<IProduct[]>([]);
   // const location = useLocation();
   const [searchParams] = useSearchParams();
   const category = searchParams.get('category');
 
+
   useEffect(() => {
-    if (category) {
-      fetchProducts(category);
-    } else {
 
-    }
-  }, [category]);
+    const fetchProducts = async (category: string | null) => {
 
-  const fetchProducts = async (category: string) => {
-    try {
-      const response = await fetch(`${API_URL}/products/?category=${category}`);
-      const data = await response.json();
-      setData(data);
-    } catch (error) {
-      console.error('Error fetching products:', error);
+      if (category == null) {
+        const response = await fetch(`${API_URL}/products`);
+        const data = await response.json();
+        setData(data);
+      } else {
+        const response = await fetch(`${API_URL}/products/?category=${category}`);
+        const data = await response.json();
+        setData(data);
+      }
     }
-  };
+
+    fetchProducts(category);
+
+  }, [category, API_URL]);
 
 
   return (
@@ -67,7 +71,6 @@ export default function Shop() {
               product_name={item.product_name}
               product_unit_price={item.product_unit_price}
               product_image={item.product_image}
-              available_colors={item.available_colors}
             />
           ))
           : ''}

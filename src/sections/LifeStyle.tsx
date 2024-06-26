@@ -1,7 +1,6 @@
 import ItemCard from "@components/itemcard/ItemCard"
 import { ILifeStyle } from "@defines/index"
 import { useState, useEffect } from "react"
-import axios from "axios"
 import { API_URL } from "@utils/index"
 import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
 
@@ -16,15 +15,20 @@ export default function LifeStyle() {
 	};
 
 	useEffect(() => {
-		axios.get(`${API_URL}/products/?category=lifestyle`)
-			.then(res => {
-				if (Array.isArray(res.data)) {
-					setData(res.data);
-				} else {
-					console.error('Fetched data is not an array:', res.data);
-				}
-			})
-			.catch(error => console.log(error));
+
+		const fetchData = async () => {
+			const response = await fetch(`${API_URL}/products/?category=lifestyle`)
+
+			if (!response.ok) {}
+
+			const data = await response.json();
+
+			setData(data)
+
+		}
+
+		fetchData();
+
 	}, []);
 
 	const items = data.slice(0, 6);

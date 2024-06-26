@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Button } from '@shadcn-ui/button'
 import { HiPlus as Addicon, HiMinus as MinusIcon } from 'react-icons/hi2'
 import { ICartItem } from '@defines/index'
-// import axios from 'axios'
 import { API_URL } from '@utils/index'
 import { formatPrice } from "@utils/index"
 
@@ -25,9 +24,11 @@ export default function CartItem({ item }: { item: ICartItem }) {
   //     .catch((error) => console.log(error));
   // }, []);
 
-  return <div id='CartItem' className="grid grid-cols-1 gap-y-6 md:grid-cols-5 rounded-[4px] bg-white py-8 px-4 ">
-    <img className='h-[56.25vw] md:h-1/2' src={`${API_URL}/images/?id=${item.product_image}`} alt="" />
-    <div className="description flex flex-col gap-y-2 col-span-3 px-8">
+  return <div id='CartItem' className="grid grid-cols-1 gap-y-6 md:grid-cols-2  rounded-[4px] bg-white py-8 px-4 ">
+    <div className="max-h-[56.25vw] lg:col-span-1">
+      <img className='' src={`${API_URL}/images/?id=${item.product_image}`} alt="" />
+    </div>
+    <div className="description flex flex-col gap-y-2 px-8">
       <h2 className='text-black'>{item.product_name}</h2>
       <p className='text-red-500'>Only {item.in_stock} items left in stock</p>
       <div className="specifications flex flex-col gap-y-4">
@@ -51,6 +52,6 @@ export default function CartItem({ item }: { item: ICartItem }) {
         </p>
       </div>
     </div>
-    <span className='font-bold text-right text-gray-700'>{formatPrice(item.product_unit_price)}</span>
+    <div className='font-bold text-right col-span-2 text-gray-700'>{formatPrice(item.product_unit_price)}</div>
   </div>
 }
