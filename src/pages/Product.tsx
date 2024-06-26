@@ -9,7 +9,7 @@ import { API_URL, formatPrice } from "@utils/index";
 import { createCart } from '@utils/index';
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@shadcn-ui/dialog";
 import { useState } from "react";
-
+import Cookies from 'js-cookie';
 import { HiOutlineCheckCircle as SuccessIcon } from "react-icons/hi2"
 
 
@@ -26,7 +26,9 @@ function ProductInformation() {
 
 	async function addToCart(product_id: string) {
 
-		const cart_id = await createCart()
+		await createCart()
+
+		const cart_id = Cookies.get("cart_id")
 
 
 
