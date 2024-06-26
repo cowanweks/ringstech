@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './pages/App.tsx';
+import App from './pages/App';
 import '@styles/index.scss';
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Cart from '@pages/Cart';
@@ -8,29 +8,12 @@ import Shop from '@pages/Shop';
 import SignIn from '@pages/SignIn';
 import SignUp from '@pages/SignUp';
 import TrackOrder from '@pages/TrackOrder';
-import Checkout from '@pages/Checkout.tsx';
+import Checkout from '@pages/Checkout';
 import Admin from '@pages/Admin.tsx';
-import ProductPage from '@pages/Product.tsx';
-import { API_URL } from '@utils/index.ts';
-import Cookies from 'js-cookie';
+import ProductPage from '@pages/Product';
+import { PaymentSuccess } from '@pages/Payment';
 
-function createCart() {
 
-  if (Cookies.get("cart_id") == undefined) {
-
-    fetch(`${API_URL}/create_cart`, {
-      method: "GET"
-    }).then(res => res.json())
-      .then(data => {
-
-        Cookies.set("cart_id", data.cart_id)
-      })
-      .catch(err => console.log(err))
-  }
-
-}
-
-createCart()
 
 const router = createBrowserRouter([
   {
@@ -77,6 +60,11 @@ const router = createBrowserRouter([
     path: "/product",
     element: <ProductPage />,
   },
+  {
+    path: "/paymentsuccess",
+    element: <PaymentSuccess />,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

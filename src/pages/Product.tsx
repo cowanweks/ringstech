@@ -6,24 +6,40 @@ import { HiOutlineInformationCircle as WarnIcon, HiOutlineStar as RateIcon } fro
 import { Button } from "@shadcn-ui/button";
 import { useLocation } from "react-router-dom";
 import { API_URL, formatPrice } from "@utils/index";
-import Cookies from 'js-cookie';
+import { createCart } from '@utils/index';
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@shadcn-ui/dialog";
+import { useState } from "react";
 
-async function addToCart(product_id: string) {
+import { HiOutlineCheckCircle as SuccessIcon } from "react-icons/hi2"
 
-	const cart_id = Cookies.get("cart_id")
-
-	fetch(`${API_URL}/cart?product_id=${product_id}&quantity=1&cart_id=${cart_id}&color=black`, {
-		method: "POST"
-	}).then(res => res.json())
-		.then(msg => console.log(msg))
-		.catch(err => console.error(err))
-
-}
 
 
 function ProductInformation() {
 
+	const [proceedCart, setProceedCart] = useState(false)
+
 	const { state } = useLocation();
+
+
+	const outOfStock = state.in_stock > 0 ? false : true
+
+
+	async function addToCart(product_id: string) {
+
+		const cart_id = await createCart()
+
+
+
+		const response = await fetch(`${API_URL}/cart?product_id=${product_id}&quantity=1&cart_id=${cart_id}&color=black`, {
+			method: "POST"
+		})
+
+		if (!response.ok) {
+			throw Error("Could not add item to cart")
+		}
+		console.log(response.body)
+
+	}
 
 	return <section className="grid grid-cols-1 md:grid-cols-3 min-h-dvh bg-white">
 		<img src={`${API_URL}/images/?id=${state.product_image}`} alt="" className="" />
@@ -33,10 +49,19 @@ function ProductInformation() {
 			<p className="py-2">Model: <span>{state.model}</span></p>
 			<p className="py-2">{formatPrice(state.product_unit_price)}</p>
 			<p className="flex items-center gap-x-2 py-2 text-red-500">
-				{state.in_stock < 10 && <>
-					<WarnIcon size={16} className="" />
-					<span>3 units left"</span>
-				</>}
+
+				{outOfStock ? <span>
+					Unit out of Stock!
+				</span> :
+					<>
+						{
+							state.in_stock < 10 && <>
+								<WarnIcon size={16} className="" />
+								<span>Only {state.in_stock} units left"</span>
+							</>
+						}
+					</>
+				}
 			</p>
 			<div id="rate_card" className="flex gap-x-2 py-4">
 				<RateIcon className="fill-orange-400 stroke-none" size={24} />
@@ -53,10 +78,40 @@ function ProductInformation() {
 					</button>
 				))}*/}
 			</div>
-			<Button onClick={() => addToCart(state.product_id)} className="flex items-center gap-x-4 h-12 w-full bg-[#ff7701] hover:bg-[#ff7701] hover:opacity-80">
-				<AddCartIcon size={16} />
-				<span>ADD TO CART</span>
-			</Button>
+
+			<Dialog open={proceedCart}>
+				<Button disabled={outOfStock} onClick={() => {
+					addToCart(state.product_id)
+					setProceedCart(true)
+				}} className="flex items-center gap-x-4 h-12 w-full bg-[#ff7701] hover:bg-[#ff7701] hover:opacity-80">
+					<AddCartIcon size={16} />
+					<span>ADD TO CART</span>
+				</Button>
+
+				<DialogContent className="sm:max-w-md">
+					<DialogHeader>
+						<DialogTitle className="py-4">Proceed to Cart</DialogTitle>
+						<DialogDescription className="flex gap-x-4 py-2">
+							<SuccessIcon className="stroke-green-500" size={32} />
+							<span>Successfully added item to cart! Would you like to proceed to cart</span>
+						</DialogDescription>
+					</DialogHeader>
+					<DialogFooter className="sm:justify-start">
+						<a href="/cart">
+							<Button variant="default">
+								Proceed to Cart
+							</Button>
+						</a>
+						<DialogClose asChild>
+							<a href="/shop">
+								<Button type="button" variant="destructive" onClick={() => setProceedCart(false)}>
+									Continue Shopping
+								</Button>
+							</a>
+						</DialogClose>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
 
 			<div className="product_details flex flex-col gap-y-4 py-4">
 				<h2 className="pb-4 border-b-2">Product Details</h2>

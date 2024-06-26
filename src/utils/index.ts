@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import Cookies from "js-cookie";
 import { twMerge } from "tailwind-merge";
 
 
@@ -22,3 +23,28 @@ export const formatPrice = (price: number) => {
     currency: 'KES',
   }).format(price);
 };
+
+
+export async function createCart() {
+
+  if (Cookies.get("cart_id") == undefined) {
+
+    const response = await fetch(`${API_URL}/create_cart`, {
+      method: "GET"
+    })
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status} - ${response.body}`);
+    }
+
+    const data = await response.json()
+
+    Cookies.set("cart_id", data.cart_id)
+
+    return data.cart_id;
+
+  }
+
+
+  return Cookies.get("cart_id");
+}
