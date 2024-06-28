@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineCheckCircle as SuccessIcon } from "react-icons/hi2";
 import PlaceHolderPic from "@public/600x400.svg";
 import { IProduct } from "@defines/index";
+import Cookies from "js-cookie";
 
 function ProductInformation() {
 
@@ -39,11 +40,17 @@ function ProductInformation() {
 	}, [product_id]);
 
 	async function addToCart(product_id: string | undefined) {
+
 		if (!product_id) {
 			throw new Error("Product ID is undefined");
 		}
 
-		const cart_id: string | undefined = await createCart();
+		await createCart();
+
+		const cart_id: string | undefined = Cookies.get("cart_id");
+
+		console.log(cart_id)
+
 		const formData = new FormData();
 
 		formData.append("product_id", product_id)

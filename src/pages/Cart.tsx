@@ -10,6 +10,7 @@ import { Input } from "@shadcn-ui/input";
 import { Label } from "@shadcn-ui/label";
 import { ICartItem } from "@defines/index";
 
+
 function getCartTotal(cart: Array<ICartItem>) {
   return cart.reduce((total, item) => total + item.quantity * item.product_unit_price, 0);
 }
@@ -37,6 +38,7 @@ export default function Cart() {
     const cart_id = Cookies.get("cart_id");
     if (cart_id) {
       setCartId(cart_id);
+      console.log(cartId)
     }
   }, []);
 
