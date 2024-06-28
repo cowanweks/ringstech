@@ -1,8 +1,3 @@
-import { Header } from '@sections/Header';
-import Footer from '@sections/Footer';
-import Map from '@sections/Map';
-import ItemCard from '@components/itemcard/ItemCard';
-import { IProduct } from '@defines/index';
 import {
   Pagination,
   PaginationContent,
@@ -12,18 +7,20 @@ import {
   PaginationLink,
   PaginationEllipsis,
 } from '@shadcn-ui/pagination';
+import { Header } from '@sections/Header';
+import Footer from '@sections/Footer';
+import Map from '@sections/Map';
+import ItemCard from '@components/itemcard/ItemCard';
+import { IProduct } from '@defines/index';
 import { useEffect, useState } from 'react';
 import { API_URL } from '@utils/index';
 import { useSearchParams } from 'react-router-dom';
-
-
 
 
 export default function Shop() {
 
 
   const [data, setData] = useState<IProduct[]>([]);
-  // const location = useLocation();
   const [searchParams] = useSearchParams();
   const category = searchParams.get('category');
 
@@ -45,7 +42,7 @@ export default function Shop() {
 
     fetchProducts(category);
 
-  }, [category, API_URL]);
+  }, [category]);
 
 
   return (
@@ -78,7 +75,7 @@ export default function Shop() {
       <Pagination className="h-16 py-16 flex justify-center">
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious href="#" className="text-[#c5c6c7]" />
+            <PaginationPrevious href="#" className="text-gray-500" />
           </PaginationItem>
           <PaginationItem>
             <PaginationLink href="#" className="bg-[#ff7701] text-[#c5c6c7]">
@@ -86,12 +83,12 @@ export default function Shop() {
             </PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href="#" className="text-[#c5c6c7]">
+            <PaginationLink href="#" className="text-gray-500">
               2
             </PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href="#" className="text-[#c5c6c7]">
+            <PaginationLink href="#" className="text-gray-500">
               3
             </PaginationLink>
           </PaginationItem>
@@ -99,7 +96,7 @@ export default function Shop() {
             <PaginationEllipsis />
           </PaginationItem>
           <PaginationItem>
-            <PaginationNext href="#" className="text-[#c5c6c7]" />
+            <PaginationNext href="#" className="text-gray-500" />
           </PaginationItem>
         </PaginationContent>
       </Pagination>

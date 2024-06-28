@@ -10,7 +10,6 @@ export default function CoversProtectors() {
 
 	const [data, setData] = useState<IProduct[]>([]);
 	const [isOpen, setIsOpen] = useState(false);
-
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
@@ -18,9 +17,11 @@ export default function CoversProtectors() {
 	useEffect(() => {
 
 		const fetchData = async () => {
-			const response = await fetch(`${API_URL}/products/?category=covers_protectors`)
+			const response = await fetch(`${API_URL}/products?category=covers_protectors`)
 
-			if (!response.ok) {}
+			if (!response.ok) {
+				throw Error("Error: " + response.body)
+			}
 
 			const data = await response.json();
 
@@ -32,7 +33,7 @@ export default function CoversProtectors() {
 
 	}, []);
 
-	const items = data.slice(0, 6);
+	const items = data.slice(0, 6)
 
 	return (
 		<section id="CoversProtectors" className="min-h-dvh px-4 py-8 bg-gray-200">

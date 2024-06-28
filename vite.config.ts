@@ -16,9 +16,24 @@ export default defineConfig({
       "@styles": path.resolve(__dirname, "./src/styles"),
       "@sections": path.resolve(__dirname, "./src/sections"),
       "@providers": path.resolve(__dirname, "./src/providers"),
-      "@components": path.resolve(__dirname, "./src/components")
+      "@components": path.resolve(__dirname, "./src/components"),
     },
   },
 
   plugins: [react()],
+  build: {
+    outDir: "../static",
+    emptyOutDir: true,
+    sourcemap: true,
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:5000/",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });

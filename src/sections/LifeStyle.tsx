@@ -1,5 +1,5 @@
 import ItemCard from "@components/itemcard/ItemCard"
-import { ILifeStyle } from "@defines/index"
+import { IProduct } from "@defines/index"
 import { useState, useEffect } from "react"
 import { API_URL } from "@utils/index"
 import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
@@ -7,9 +7,8 @@ import { HiMenu as MenuIcon, HiX as CloseIcon } from "react-icons/hi";
 
 export default function LifeStyle() {
 
-	const [data, setData] = useState<Array<ILifeStyle>>([]);
+	const [data, setData] = useState<IProduct[]>([]);
 	const [isOpen, setIsOpen] = useState(false);
-
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
@@ -17,9 +16,11 @@ export default function LifeStyle() {
 	useEffect(() => {
 
 		const fetchData = async () => {
-			const response = await fetch(`${API_URL}/products/?category=lifestyle`)
+			const response = await fetch(`${API_URL}/products?category=lifestyle`)
 
-			if (!response.ok) {}
+			if (!response.ok) {
+				throw Error("Error: " + response.body)
+			}
 
 			const data = await response.json();
 
@@ -31,7 +32,7 @@ export default function LifeStyle() {
 
 	}, []);
 
-	const items = data.slice(0, 6);
+	const items = data.slice(0, 6)
 
 	return (
 		<section id="LifeStyle" className="min-h-dvh px-4 py-16 bg-gray-200">

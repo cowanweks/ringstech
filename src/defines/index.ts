@@ -1,33 +1,34 @@
-
 export interface ICartItem {
-  brand: string,
-  model: string,
-  quantity: number,
-  product_name: string,
-  color: string,
-  product_image: string,
-  in_stock: number,
-  product_unit_price: number,
-  description: string
+  brand: string;
+  model: string;
+  quantity: number;
+  product_name: string;
+  color: string;
+  product_image: string;
+  in_stock: number;
+  item_id: string;
+  cart_id: string;
+  product_id: string;
+  product_unit_price: number;
+  description: string;
 }
 
 export interface IOrder {
-  brand: string,
-  model: string,
-  quantity: number,
-  item_name: string,
-  item_color: string,
-  item_image: string,
-  in_stock: number,
-  item_price: number,
-  item_description: string
+  brand: string;
+  model: string;
+  quantity: number;
+  item_name: string;
+  item_color: string;
+  item_image: string;
+  in_stock: number;
+  item_price: number;
+  item_description: string;
 }
 
-
 export interface IProduct {
-  product_id?: string | undefined,
+  product_id?: string | undefined;
   rom?: string;
-  type?: string,
+  type?: string;
   description?: string;
   product_name?: string;
   product_unit_price?: number;
@@ -45,8 +46,8 @@ export interface IProduct {
 }
 
 export interface ILifeStyle {
-  product_id?: string | undefined,
-  type?: string,
+  product_id?: string | undefined;
+  type?: string;
   description?: string;
   product_name?: string;
   product_unit_price?: number;

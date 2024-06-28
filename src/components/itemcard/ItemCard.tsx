@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 
 const ItemCard = (props: IProduct) => {
 
-
   return (
-    <Link to="/product" state={props} className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
+    <Link to={`/product?product_id=${props.product_id}`} className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
       <div className="h-[200px]">
         <img
           src={`${API_URL}/images/?id=${props.product_image}`}

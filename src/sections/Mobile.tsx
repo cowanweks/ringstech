@@ -16,9 +16,11 @@ export default function Mobiles() {
   useEffect(() => {
 
     const fetchData = async () => {
-      const response = await fetch(`${API_URL}/products/?category=phone`)
+      const response = await fetch(`${API_URL}/products?category=phone`)
 
-      if (!response.ok) {}
+      if (!response.ok) {
+        throw Error("Error: " + response.body)
+      }
 
       const data = await response.json();
 
@@ -30,8 +32,8 @@ export default function Mobiles() {
 
   }, []);
 
-
   const items = data.slice(0, 6)
+
 
   return (
     <section id="Mobiles" className="min-h-dvh px-4 py-8 bg-gray-200">
