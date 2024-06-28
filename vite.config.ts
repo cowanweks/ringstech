@@ -22,18 +22,8 @@ export default defineConfig({
 
   plugins: [react()],
   build: {
-    outDir: "../static",
+    outDir: "dist",
     emptyOutDir: true,
     sourcemap: true,
-  },
-  server: {
-    proxy: {
-      "/api": {
-        target: "http://127.0.0.1:5000/",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
+  }
 });

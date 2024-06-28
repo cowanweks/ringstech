@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "postinstall": "npm run build",
-    "start": "vite --host 0.0.0.0 --port $PORT preview",
+    "start": "serve dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -37,6 +37,7 @@
     "react-hook-form": "^7.52.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
+    "serve": "^14.2.3",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
