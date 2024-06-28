@@ -29,7 +29,6 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.4",
     "js-cookie": "^3.0.5",
-    "lite-server": "^2.6.1",
     "lucide-react": "^0.376.0",
     "postcss": "^8.4.38",
     "prop-types": "^15.8.1",
