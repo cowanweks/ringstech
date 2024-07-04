@@ -1,9 +1,7 @@
 import ProductForm from "@pages/ProductForm"
+import Footer from "@sections/Footer"
 import { Header } from "@sections/Header"
-// import { Header } from '@sections/Header';
-// import { Input } from "@shadcn-ui/input"
-// import { Label } from "@shadcn-ui/label"
-// import { Button } from "@shadcn-ui/button"
+import Map from "@sections/Map"
 
 
 export default function Admin() {
@@ -14,5 +12,7 @@ export default function Admin() {
     <div className="flex justify-center py-16 bg-gray-100">
       <ProductForm />
     </div>
+    <Map />
+    <Footer />
   </div>
 }
