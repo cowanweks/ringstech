@@ -48,16 +48,24 @@ export default function ProductForm() {
     // const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
 
-    const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 
         if (event.target.value == "phone") {
+
             setProductCategory(ProductCategories.phone)
+
         } else if (event.target.value == "accessory") {
+
             setProductCategory(ProductCategories.accessory)
+
         } else if (event.target.value == "lifestyle") {
+
             setProductCategory(ProductCategories.lifestyle)
+
         } else if (event.target.value == "covers_protectors") {
+
             setProductCategory(ProductCategories.covers_protectors)
+
         }
     }
 
@@ -161,8 +169,8 @@ export default function ProductForm() {
             <label htmlFor="product_category" className="flex flex-col gap-y-2">
                 <span>Product Category</span>
                 <select id="product_category"
-                    {...register("product_category", { required: true })}
-                    onChange={() => handleCategoryChange}
+                    // {...register("product_category", { required: true })}
+                    onChange={handleCategoryChange}
                     className="h-10 px-4 py-2 bg-white border-[1px] border-gray-500 rounded-md">
                     <option value="phone" className="">SmartPhone</option>
                     <option value="accessory">Accessory</option>
