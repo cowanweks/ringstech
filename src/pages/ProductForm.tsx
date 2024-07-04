@@ -45,7 +45,7 @@ export default function ProductForm() {
 
     const [imageURL, setImageURL] = useState<string | null>(null);
     const [productCategory, setProductCategory] =
-        useState<ProductCategories | null>(ProductCategories.phone)
+        useState<ProductCategories | null>(ProductCategories.none)
     const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
 
 
