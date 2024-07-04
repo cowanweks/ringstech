@@ -179,7 +179,7 @@ export default function ProductForm() {
                     {...register("product_image", { required: true })}
                     onChange={handleImageChange}
                     accept="image/jpeg,image/png,image/jpg,image/webp,image/avif,image/bmp"
-                    className="h-10 px-4 py-2"
+                    className="h-10 px-4 py-2 hidden"
                 />
             </label>
             <label htmlFor="product_category" className="flex flex-col gap-y-2">
@@ -312,6 +312,7 @@ export default function ProductForm() {
                     <Select
                         id="available_colors"
                         isMulti
+
                         options={colorOptions}
                         onChange={(selectedOptions) => {
                             const values = selectedOptions ? selectedOptions.map(option => option.value) : [];
