@@ -94,8 +94,8 @@ function ProductInformation() {
 						<>
 							{product?.in_stock && product.in_stock < 10 && (
 								<>
-									<WarnIcon size={16} className="text-yellow-500" />
-									<span>Only {product.in_stock} units left</span>
+									<WarnIcon size={16} className="text-red-500" />
+									<span className="text-red-500">Only {product.in_stock} units left</span>
 								</>
 							)}
 						</>
@@ -146,7 +146,7 @@ function ProductInformation() {
 								<span>Successfully added item to cart! Would you like to proceed to cart</span>
 							</DialogDescription>
 						</DialogHeader>
-						<DialogFooter className="sm:justify-start">
+						<DialogFooter className="flex flex-row gap-x-2 justify-start">
 							<a href="/cart">
 								<Button variant="default">Proceed to Cart</Button>
 							</a>

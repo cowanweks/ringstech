@@ -2,7 +2,7 @@ import BrandLogo from "@public/logo.jpg";
 import { useState, } from "react";
 import { Button } from "@shadcn-ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@shadcn-ui/hover-card"
-
+import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,21 +15,21 @@ const NavBar = () => {
   return (
     <nav className="bg-white shadow-md z-10">
       <div className="container mx-auto px-2 h-16 flex justify-between items-center">
-        <a href="/">
+        <NavLink to="/">
           <img src={BrandLogo} alt="Samsung Store" className="h-16" />
-        </a>
+        </NavLink>
         <div className="hidden md:flex md:h-auto space-x-6">
-          <a href="/shop" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SHOP</a>
-          <a href="/shop?category=phone" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105">SMARTPHONES</a>
-          <a href="/shop?category=accessory" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">ACCESSORIES</a>
-          <a href="/shop?category=lifestyle" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">LIFESTYLE</a>
-          <a href="/shop?category=covers_protectors" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">COVERS</a>
-          <a href="/#Spares" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">SPARES</a>
+          <NavLink to="/shop" className={({ isActive }) => (isActive ? 'text-[#ff7701] leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>SHOP</NavLink>
+          <NavLink to="/shop?category=phone" className={({ isActive }) => (isActive ? 'text-[#ff7701] leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>SMARTPHONES</NavLink>
+          <NavLink to="/shop?category=accessory"  className={({ isActive }) => (isActive ? 'text-[#ff7701] leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>ACCESSORIES</NavLink>
+          <NavLink to="/shop?category=lifestyle"  className={({ isActive }) => (isActive ? 'text-[#ff7701] leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>LIFESTYLE</NavLink>
+          <NavLink to="/shop?category=covers_protectors"  className={({ isActive }) => (isActive ? 'text-[#ff7701] leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>COVERS</NavLink>
+          <NavLink to="/#Spares" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">SPARES</NavLink>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <a href="/#Repairs" className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
+              <NavLink to="/#Repairs" className="block px-3 py-2 text-base text-gray-600  hover:text-[#ff7701]">
                 REPAIRS
-              </a>
+              </NavLink>
             </HoverCardTrigger>
             <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
               <div className="flex flex-col">
@@ -45,12 +45,12 @@ const NavBar = () => {
               </div>
             </HoverCardContent>
           </HoverCard>
-          <a href="/cart" className="flex items-center">
+          <NavLink to="/cart" className={({ isActive }) => (isActive ? 'flex items-center text-[#ff7701] text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'flex items-center text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
-          </a>
-          <a href="/track" className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
+          </NavLink>
+          <NavLink to="/track"  className={({ isActive }) => (isActive ? 'text-[#ff7701] text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105' : 'text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105')}>
             <Button className="flex gap-x-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -58,7 +58,7 @@ const NavBar = () => {
               </svg>
               <span className="">TRACK ORDER</span>
             </Button>
-          </a>
+          </NavLink>
           <HoverCard>
             <HoverCardTrigger asChild>
               <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mpesa.png" alt="mpesa" />
@@ -79,29 +79,29 @@ const NavBar = () => {
       </div>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-gray-100`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="/shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          <NavLink to="/shop" className={({ isActive }) => (isActive ? "text-[#ff7701] block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             SHOP
-          </a>
-          <a href="/shop?category=phone" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/shop?category=phone" className={({ isActive }) => (isActive ? "text-[#ff7701] block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             SMARTPHONES
-          </a>
-          <a href="/shop?category=accessory" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/shop?category=accessory" className={({ isActive }) => (isActive ? "text-[#ff7701] block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             ACCESSORIES
-          </a>
-          <a href="shop" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/shop?category=lifestyle" className={({ isActive }) => (isActive ? "text-[#ff7701] block px-3 py-2 rounded-md font-medium": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             LIFESTYLE
-          </a>
-          <a href="/shop?category=covers_protectors" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/shop?category=covers_protectors" className={({ isActive }) => (isActive ? "text-[#ff7701] block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             COVERS
-          </a>
-          <a href="/#Spares" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/#Spares" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
             SPARES
-          </a>
+          </NavLink>
           <HoverCard>
             <HoverCardTrigger asChild>
-              <a href="/#Repairs" className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+              <NavLink to="/#Repairs" className="block px-3 py-2 w-full text-left rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
                 REPAIRS
-              </a>
+              </NavLink>
             </HoverCardTrigger>
             <HoverCardContent className="w-auto flex flex-col gap-y-4 bg-gray-100">
               <div className="h-10 border-b mb-2">We Offer the following Services</div>
@@ -115,19 +115,19 @@ const NavBar = () => {
               <div className="h-8">8: Speaker or Microphone Repair</div>
             </HoverCardContent>
           </HoverCard>
-          <a href="/track" className="flex gap-x-4 px-3 py-2 rounded-md text-base font-medium text-gray-600  hover:text-[#ff7701] hover:bg-gray-200">
+          <NavLink to="/track" className={({ isActive }) => (isActive ? "text-[#ff7701] bg-gray-200 block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
             </svg>
             <span>TRACK ORDER</span>
-          </a>
-          <a href="/cart" className="flex gap-x-4 px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">
+          </NavLink>
+          <NavLink to="/cart" className={({ isActive }) => (isActive ? "text-[#ff7701] bg-gray-200 block px-3 py-2 rounded-md text-base font-medium hover:text-[#ff7701] hover:bg-gray-200": "block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200")}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out  hover:scale-105">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             <span>Cart</span>
-          </a>
+          </NavLink>
           <HoverCard>
             <HoverCardTrigger asChild>
               <button className="flex gap-x-4 w-full px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#ff7701] hover:bg-gray-200">

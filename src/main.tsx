@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './pages/App';
 import '@styles/index.scss';
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Cart from '@pages/Cart';
 import Shop from '@pages/Shop';
 import SignIn from '@pages/SignIn';
@@ -12,6 +11,8 @@ import Checkout from '@pages/Checkout';
 import Admin from '@pages/Admin.tsx';
 import ProductPage from '@pages/Product';
 import { PaymentSuccess } from '@pages/Payment';
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { ToastProvider } from '@shadcn-ui/toast';
 
 
 
@@ -70,6 +71,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
 
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ToastProvider
+      duration={2}>
+      <RouterProvider router={router} />
+    </ToastProvider>
   </React.StrictMode>,
 );

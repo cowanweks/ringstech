@@ -247,7 +247,7 @@ export default function ProductForm() {
                     <label htmlFor="battery" className="flex flex-col gap-y-2">
                         <span>Battery</span>
                         <input id="battery"
-                            {...productCategory == ProductCategories.phone ? register("product_category", { required: true }) : register("product_category")}
+                            {...productCategory == ProductCategories.phone ? register("battery", { required: true }) : register("battery")}
                             className="
                 h-10 px-4 py-2 bg-white border-[1px] border-gray-500 rounded-md"/>
                         {errors.battery && <span className="text-red-500">This field is required</span>}

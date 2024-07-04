@@ -17,7 +17,7 @@ const ItemCard = (props: IProduct) => {
         />
       </div>
       <div className="product-details p-4">
-        <p className="product-title text-xl font-bold text-gray-800">
+        <p className="product-title text-xl font-bold text-red-400">
           {props.product_name}
         </p>
         <p className="product-price text-lg font-bold text-green-600 mt-2">
