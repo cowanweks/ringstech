@@ -39,9 +39,9 @@ function ProductInformation() {
 		fetchProduct();
 	}, [product_id]);
 
-	async function addToCart(product_id: string | undefined) {
+	async function addToCart(product_id: string | null) {
 
-		if (!product_id) {
+		if (product_id != null) {
 			throw new Error("Product ID is undefined");
 		}
 
@@ -53,7 +53,7 @@ function ProductInformation() {
 
 		const formData = new FormData();
 
-		formData.append("product_id", product_id)
+		formData.append("product_id", `${product_id}`)
 		formData.append("cart_id", `${cart_id}`)
 		formData.append("quantity", "1")
 		formData.append("color", "black")
@@ -130,7 +130,9 @@ function ProductInformation() {
 					<Button
 						disabled={product?.in_stock ? product.in_stock === 0 : true}
 						onClick={() => {
-							addToCart(product?.product_id);
+							if (product?.product_id != null) {
+								addToCart(product.product_id);
+							}
 						}}
 						className="flex items-center gap-x-4 h-12 w-full bg-[#ff7701] hover:bg-[#ff7701] hover:opacity-80"
 					>

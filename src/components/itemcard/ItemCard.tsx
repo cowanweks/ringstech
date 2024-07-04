@@ -2,13 +2,28 @@ import { IProduct } from "@defines/index";
 import "@styles/ItemCard.scss";
 import { API_URL, formatPrice } from "@utils/index";
 import PropTypes, { string } from "prop-types";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
 const ItemCard = (props: IProduct) => {
 
+  console.log(props)
+
+  const [productID, setProductID] = useState<string | null>(null)
+
+  useEffect(() => {
+
+    if (props.product_id != null) {
+
+      setProductID(props!.product_id)
+
+    }
+
+  }, [props])
+
   return (
-    <Link to={`/product?product_id=${props.product_id}`} className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
+    <Link to={`/product?product_id=${productID}`} className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
       <div className="h-[200px]">
         <img
           src={`${API_URL}/images/?id=${props.product_image}`}

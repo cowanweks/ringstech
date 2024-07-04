@@ -64,6 +64,7 @@ export default function Shop() {
               ram={item.ram}
               rom={item.rom}
               processor={item.processor}
+              product_id={item.product_id}
               product_category={item.product_category}
               product_name={item.product_name}
               product_unit_price={item.product_unit_price}

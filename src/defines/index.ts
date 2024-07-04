@@ -26,7 +26,7 @@ export interface IOrder {
 }
 
 export interface IProduct {
-  product_id?: string | undefined;
+  product_id?: string | null;
   rom?: string;
   type?: string;
   description?: string;
