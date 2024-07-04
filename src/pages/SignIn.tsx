@@ -1,7 +1,5 @@
 import { Button } from '@shadcn-ui/button';
 import { API_URL } from '@utils/index';
-import { useState } from 'react';
-import { useToast } from '@shadcn-ui/use-toast';
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type Inputs = {
@@ -11,8 +9,7 @@ type Inputs = {
 
 export default function SignIn() {
 
-  const [loginSuccess, setLoginSuccess] = useState(false)
-  const { toast, toasts } = useToast();
+  // const [loginSuccess, setLoginSuccess] = useState(false)
 
   const {
     register,
@@ -38,9 +35,9 @@ export default function SignIn() {
       throw Error("Error: " + response.body)
     }
 
-    const response_data = await response.json()
+    // const response_data = await response.json()
 
-    setLoginSuccess(true)
+    // setLoginSuccess(true)
 
 
   }
