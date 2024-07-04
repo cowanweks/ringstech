@@ -2,7 +2,6 @@ import { IProduct } from "@defines/index";
 import "@styles/ItemCard.scss";
 import { API_URL, formatPrice } from "@utils/index";
 import PropTypes, { string } from "prop-types";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
