@@ -28,10 +28,6 @@ export default function Products() {
     setIsModalOpen(true);
   };
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -63,7 +59,7 @@ export default function Products() {
         maskClosable
       >
         <div className="flex justify-center">
-          <ProductForm />
+          <ProductForm action="new" product={null} />
         </div>
       </Modal>
     </div>

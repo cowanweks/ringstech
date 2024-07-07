@@ -19,7 +19,7 @@ export default function ProductList({ data }: { data: Array<IProduct> }) {
   const [messageApi, contextHolder] = message.useMessage();
 
   const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: IProduct[]) => { },
+    // onChange: (selectedRowKeys: React.Key[], selectedRows: IProduct[]) => { },
     getCheckboxProps: (record: IProduct) => ({
       disabled: record.product_name === "Disabled Product", // Column configuration not to be checked
       name: record.product_name,

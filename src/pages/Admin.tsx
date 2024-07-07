@@ -1,7 +1,7 @@
 import Footer from "@sections/Footer";
 import { Header } from "@sections/Header";
 import Map from "@sections/Map";
-import { NavLink, Outlet, Route, Routes } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 // import { useNavigate } from "react-router-dom"
 
 export default function Admin() {
