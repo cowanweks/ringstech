@@ -8,24 +8,20 @@ import Accessories from "@sections/Accessories";
 import CoversProtectors from "@sections/CoversProtectors";
 import Repairs from "@sections/Repairs";
 import Spares from "@sections/Spares";
-import BrandLogo from "@public/logo.jpg";
 import { NavLink } from "react-router-dom";
-import { Input } from "@shadcn-ui/input";
+// import { Input } from "@shadcn-ui/input";
 import {
-  HiOutlineMagnifyingGlass as SearchIcon,
+  // HiOutlineMagnifyingGlass as SearchIcon,
   HiOutlineChevronLeft as PreviousIcon,
   HiOutlineChevronRight as NextIcon,
 } from "react-icons/hi2";
-import { Button } from "@shadcn-ui/button";
+// import { Button } from "@shadcn-ui/button";
 
 export default function App() {
   return (
     <div className="bg-white">
       <Header />
-      <div className="flex items-center gap-x-8 px-4 h-44">
-        <NavLink to="/">
-          <img src={BrandLogo} alt="Samsung Store" className="w-32" />
-        </NavLink>
+      {/* <div className="flex items-center gap-x-8 px-4 h-44">
 
         <div className="flex items-center relative w-full">
           <button className="h-full w-12 absolute bg-transparent cursor-default">
@@ -37,7 +33,7 @@ export default function App() {
           />
         </div>
         <Button className="h-14 w-64 rounded-none bg-blue-800">Search</Button>
-      </div>
+      </div> */}
       <Hero />
       <div className="">
         <h2 className="py-8 px-12 font-semibold">TOP CATEGORIES</h2>

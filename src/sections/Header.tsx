@@ -6,6 +6,7 @@ import {
   HoverCardTrigger,
 } from "@shadcn-ui/hover-card";
 import { NavLink } from "react-router-dom";
+import BrandLogo from "@public/logo.jpg";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,9 @@ const NavBar = () => {
   return (
     <nav className="bg-white shadow-md z-10">
       <div className="flex justify-end h-20 px-4 items-center">
+        <NavLink to="/" className="absolute left-0">
+          <img src={BrandLogo} alt="Samsung Store" className="h-20" />
+        </NavLink>
         <div className="hidden md:flex md:h-auto space-x-6">
           <NavLink
             to="/"
