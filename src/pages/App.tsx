@@ -68,8 +68,8 @@ export default function App() {
             </div>
             <span className="py-4 text-[#ff7701]"> ACCESSORIES </span>
           </NavLink>
-          <NavLink
-            to="/shop?category=lifestyle"
+          <a
+            href="#Repairs"
             className="flex flex-col items-center w-72 hover:scale-105"
           >
             <div className="h-64 w-64 rounded-full">
@@ -80,9 +80,9 @@ export default function App() {
               />
             </div>
             <span className="py-4 text-[#ff7701]"> REPAIRS </span>
-          </NavLink>
-          <NavLink
-            to="/shop?category=covers_protectors"
+          </a>
+          <a
+            href="#Spares"
             className="flex flex-col items-center w-72 hover:scale-105"
           >
             <div className="h-64 w-64 rounded-full">
@@ -93,7 +93,7 @@ export default function App() {
               />
             </div>
             <span className="py-4 text-[#ff7701]"> SPARES </span>
-          </NavLink>
+          </a>
         </div>
       </div>
       <div className="h-96 relative">
