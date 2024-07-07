@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@shadcn-ui/button";
+import { HiOutlineMapPin as MapIcon } from "react-icons/hi2";
 import {
   HoverCard,
   HoverCardContent,
@@ -112,30 +112,13 @@ const NavBar = () => {
           </NavLink>
           <NavLink
             to="/track"
-            className="text-gray-600 leading-10 hover:text-[#ff7701] transition ease-in-out hover:scale-105"
+            className="leading-10 px-2 bg-gray-100  transition ease-in-out hover:text-[#ff7701]"
           >
-            <Button className="flex gap-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                />
-              </svg>
-              <span className="">TRACK ORDER</span>
-            </Button>
+            <button className="flex items-center gap-x-2">
+              <MapIcon size={16} />
+              <span>TRACK ORDER</span>
+            </button>
+
           </NavLink>
           <span className="flex gap-x-2 place-items-center">
             <NavLink to="/signin">Sign In</NavLink>/

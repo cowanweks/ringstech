@@ -39,59 +39,62 @@ export default function App() {
         <Button className="h-14 w-64 rounded-none bg-blue-800">Search</Button>
       </div>
       <Hero />
-      <div className="flex flex-col items-center md:flex-row md:justify-center gap-x-10 px-4 py-16">
-        <NavLink
-          to="/shop?category=phone"
-          className="flex flex-col items-center w-72 hover:scale-105"
-        >
-          <div className="h-64 w-64 rounded-full">
-            <img
-              src="/phones/a55.webp"
-              alt=""
-              className="h-full rounded-full bg-gray-100 object-contain"
-            />
-          </div>
-          <span className="py-4 text-[#ff7701]"> SMARTPHONES </span>
-        </NavLink>
-        <NavLink
-          to="/shop?category=accessory"
-          className="flex flex-col items-center w-72 hover:scale-105"
-        >
-          <div className="h-64 w-64 rounded-full">
-            <img
-              src="/phones/a55.webp"
-              alt=""
-              className="h-full rounded-full bg-gray-100 object-contain"
-            />
-          </div>
-          <span className="py-4 text-[#ff7701]"> ACCESSORIES </span>
-        </NavLink>
-        <NavLink
-          to="/shop?category=lifestyle"
-          className="flex flex-col items-center w-72 hover:scale-105"
-        >
-          <div className="h-64 w-64 rounded-full">
-            <img
-              src="/phones/a55.webp"
-              alt=""
-              className="h-full rounded-full bg-gray-100 object-contain"
-            />
-          </div>
-          <span className="py-4 text-[#ff7701]"> LIFESTYLE </span>
-        </NavLink>
-        <NavLink
-          to="/shop?category=covers_protectors"
-          className="flex flex-col items-center w-72 hover:scale-105"
-        >
-          <div className="h-64 w-64 rounded-full">
-            <img
-              src="/phones/a55.webp"
-              alt=""
-              className="h-full rounded-full bg-gray-100 object-contain"
-            />
-          </div>
-          <span className="py-4 text-[#ff7701]"> COVERS and PROTECTORS </span>
-        </NavLink>
+      <div className="">
+        <h2 className="py-8 px-12 font-semibold">TOP CATEGORIES</h2>
+        <div className="flex flex-col items-center md:flex-row md:justify-center gap-x-10 px-4 py-16">
+          <NavLink
+            to="/shop?category=phone"
+            className="flex flex-col items-center w-72 hover:scale-105"
+          >
+            <div className="h-64 w-64 rounded-full">
+              <img
+                src="/phones/a55.webp"
+                alt=""
+                className="h-full rounded-full bg-gray-100 object-contain"
+              />
+            </div>
+            <span className="py-4 text-[#ff7701]"> SMARTPHONES </span>
+          </NavLink>
+          <NavLink
+            to="/shop?category=accessory"
+            className="flex flex-col items-center w-72 hover:scale-105"
+          >
+            <div className="h-64 w-64 rounded-full">
+              <img
+                src="/public/categories/watch.png"
+                alt=""
+                className="h-full rounded-full bg-gray-100 object-contain"
+              />
+            </div>
+            <span className="py-4 text-[#ff7701]"> ACCESSORIES </span>
+          </NavLink>
+          <NavLink
+            to="/shop?category=lifestyle"
+            className="flex flex-col items-center w-72 hover:scale-105"
+          >
+            <div className="h-64 w-64 rounded-full">
+              <img
+                src="/public/categories/repairs.png"
+                alt=""
+                className="h-full rounded-full bg-gray-100 object-contain"
+              />
+            </div>
+            <span className="py-4 text-[#ff7701]"> REPAIRS </span>
+          </NavLink>
+          <NavLink
+            to="/shop?category=covers_protectors"
+            className="flex flex-col items-center w-72 hover:scale-105"
+          >
+            <div className="h-64 w-64 rounded-full">
+              <img
+                src="/public/spares/spare 1.jpeg"
+                alt=""
+                className="h-full rounded-full bg-gray-100 object-contain"
+              />
+            </div>
+            <span className="py-4 text-[#ff7701]"> SPARES </span>
+          </NavLink>
+        </div>
       </div>
       <div className="h-96 relative">
         <h2 id="Recently_viewed" className="px-12 font-semibold">

@@ -2,10 +2,9 @@ import { type ClassValue, clsx } from "clsx";
 import Cookies from "js-cookie";
 import { twMerge } from "tailwind-merge";
 
-// const API_URL: string = "http://127.0.0.1:3001/api";
+const API_URL: string = "http://127.0.0.1:3001/api";
 
-const API_URL: string =
-  "https://samsungrepair-backend-35d7356462b8.herokuapp.com/api";
+// const API_URL: string = "https://samsungrepair-backend-35d7356462b8.herokuapp.com/api";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

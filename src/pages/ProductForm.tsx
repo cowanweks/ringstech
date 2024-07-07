@@ -116,6 +116,7 @@ export default function ProductForm({
     }
 
     if (action == "new") {
+
       const response = await newProduct(data);
 
       if (!response) {
@@ -124,10 +125,31 @@ export default function ProductForm({
           content: "Item could not be Added!",
         });
       } else {
+
         messageApi.open({
           type: "success",
           content: "Item added successfully!",
         });
+
+        reset({
+          product_name: "",
+          available_colors: [],
+          battery: "",
+          brand: "",
+          cameras: "",
+          description: "",
+          display: "",
+          in_stock: 0,
+          model: "",
+          processor: "",
+          product_category: "none",
+          product_image: null,
+          product_unit_price: 0.0,
+          ram: "",
+          rom: ""
+        })
+        setImageURL(null);
+        setProductCategory(ProductCategories.none)
       }
     } else {
 
@@ -136,7 +158,7 @@ export default function ProductForm({
       if (!response) {
         messageApi.open({
           type: "error",
-          content: "Item could not be Added!",
+          content: "Item could not be Updated!",
         });
       } else {
         messageApi.open({
@@ -268,6 +290,7 @@ export default function ProductForm({
             <span className="select-none">Units in Stock</span>
             <input
               id="in_stock"
+              min={0}
               type="number"
               {...register("in_stock", { required: true })}
               className="
