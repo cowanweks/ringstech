@@ -61,7 +61,7 @@ export default function App() {
           >
             <div className="h-64 w-64 rounded-full">
               <img
-                src="/public/categories/watch.png"
+                src="/categories/watch.png"
                 alt=""
                 className="h-full rounded-full bg-gray-100 object-contain"
               />
@@ -74,7 +74,7 @@ export default function App() {
           >
             <div className="h-64 w-64 rounded-full">
               <img
-                src="/public/categories/repairs.png"
+                src="/categories/repairs.png"
                 alt=""
                 className="h-full rounded-full bg-gray-100 object-contain"
               />
@@ -87,7 +87,7 @@ export default function App() {
           >
             <div className="h-64 w-64 rounded-full">
               <img
-                src="/public/spares/spare 1.jpeg"
+                src="/spares/spare 1.jpeg"
                 alt=""
                 className="h-full rounded-full bg-gray-100 object-contain"
               />
