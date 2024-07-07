@@ -1,73 +1,61 @@
-import { Button } from '@shadcn-ui/button';
-import { API_URL } from '@utils/index';
-import { useForm, SubmitHandler } from "react-hook-form"
+import { Link } from "react-router-dom";
 
-type Inputs = {
-  username: string,
-  password: string
-}
+import { Button } from "@shadcn-ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@shadcn-ui/card";
+import { Input } from "@shadcn-ui/input";
+import { Label } from "@shadcn-ui/label";
 
 export default function SignIn() {
-
-  // const [loginSuccess, setLoginSuccess] = useState(false)
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>()
-
-
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-
-    const form = new FormData()
-
-    form.append("username", data.username)
-    form.append("password", data.password)
-
-    const response = await fetch(`${API_URL}/signin`,
-      {
-        method: "POST",
-        body: form
-      });
-
-    if (!response.ok) {
-      throw Error("Error: " + response.body)
-    }
-
-    // const response_data = await response.json()
-
-    // setLoginSuccess(true)
-
-
-  }
-
-
-
   return (
-    <div className="h-dvh flex flex-col items-center justify-center bg-gray-50">
-      <form id="SignInForm" onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-y-4 min-w-fit w-3/12 p-6
-        border-[1px] border-gray-400 rounded-sm"
-      >
-        <label htmlFor="username" className="flex flex-col gap-y-2">
-          <span>UserName</span>
-          <input id="username"
-            {...register("username", { required: true })}
-            className="
-                h-10 px-4 py-2 bg-white border-[1px] border-gray-500 rounded-md"/>
-          {errors.username && <span className="text-red-500">This field is required</span>}
-        </label>
-        <label htmlFor="password" className="flex flex-col gap-y-2">
-          <span>Password</span>
-          <input id="password"
-            {...register("password", { required: true })}
-            className="
-                h-10 px-4 py-2 bg-white border-[1px] border-gray-500 rounded-md"/>
-          {errors.password && <span className="text-red-500">This field is required</span>}
-        </label>
-        <Button type='submit'>SignIn</Button>
-      </form>
-    </div >
+    <div className="flex justify-center items-center h-dvh">
+      <Card className="mx-auto max-w-sm">
+        <CardHeader>
+          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardDescription>
+            Enter your email below to login to your account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="m@example.com"
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <Link to="#" className="ml-auto inline-block text-sm underline">
+                  Forgot your password?
+                </Link>
+              </div>
+              <Input id="password" type="password" required />
+            </div>
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
+            <Button variant="outline" className="w-full">
+              Login with Google
+            </Button>
+          </div>
+          <div className="mt-4 text-center text-sm">
+            Don&apos;t have an account?{" "}
+            <Link to="/signup" className="underline">
+              Sign up
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

@@ -28,14 +28,13 @@ export interface IOrder {
 export interface IProduct {
   product_id?: string | null;
   rom?: string;
-  type?: string;
   description?: string;
   product_name?: string;
   product_unit_price?: number;
-  product_category?: string;
+  product_category?: string | null;
   available_colors?: Array<string>;
   in_stock?: number;
-  product_image?: string;
+  product_image?: FileList | null | string;
   brand?: string;
   model?: string;
   battery?: string;

@@ -4,12 +4,15 @@ import { API_URL, formatPrice } from "@utils/index";
 import PropTypes, { string } from "prop-types";
 import { Link } from "react-router-dom";
 
-
 const ItemCard = (props: IProduct) => {
-
-
   return (
-    <Link to={`/product?product_id=${props.product_id}`} className="product-card bg-white shadow-lg overflow-hidden transition-transform transform hover:scale-105 rounded-lg">
+    <Link
+      to={`/product?product_id=${props.product_id}`}
+      className="product-card bg-white shadow-lg
+      overflow-hidden transition-transform transform hover:scale-105 rounded-lg
+      w-[266px]
+      "
+    >
       <div className="h-[200px]">
         <img
           src={`${API_URL}/images/?id=${props.product_image}`}
@@ -18,17 +21,18 @@ const ItemCard = (props: IProduct) => {
         />
       </div>
       <div className="product-details p-4">
-        <p className="product-title text-xl font-bold text-red-400">
-          {props.product_name}
+        <p className="product-title text-xl font-bold text-red-400 text-nowrap w-[266px] pr-4">
+          {props.product_name?.substr(0, 30)}
         </p>
         <p className="product-price text-lg font-bold text-green-600 mt-2">
           {props.product_unit_price && (
-            <span className="px-2 py-1 text-center">{formatPrice(props.product_unit_price)}</span>
+            <span className="px-2 py-1 text-center">
+              {formatPrice(props.product_unit_price)}
+            </span>
           )}
         </p>
       </div>
     </Link>
-
   );
 };
 

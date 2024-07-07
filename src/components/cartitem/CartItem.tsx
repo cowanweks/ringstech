@@ -77,7 +77,7 @@ export default function CartItem({ item }: { item: ICartItem }) {
       </div>
       <div className="description flex flex-col gap-y-2 px-8">
         <h2 className="text-black">{item.product_name}</h2>
-        <p className="text-red-500">Only {item.in_stock} items left in stock</p>
+        {item.in_stock <= 10 && <p className="text-red-500">Only {item.in_stock} items left in stock</p>}
         <div className="specifications flex flex-col gap-y-4">
           <p>
             <b>Color: </b>{item.color}
@@ -99,8 +99,9 @@ export default function CartItem({ item }: { item: ICartItem }) {
                 max={item.in_stock}
                 type="number"
                 value={quantity}
+                disabled
                 onChange={handleInputChange}
-                className="w-16 rounded-[5px] px-2 text-center border-[1px] border-black"
+                className="w-16 rounded-[5px] px-2 text-center border-[1px] border-black select-none"
               />
               <Button onClick={handlePlusClick}>
                 <AddIcon />

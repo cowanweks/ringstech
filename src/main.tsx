@@ -1,20 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './pages/App';
-import '@styles/index.scss';
-import Cart from '@pages/Cart';
-import Shop from '@pages/Shop';
-import SignIn from '@pages/SignIn';
-import SignUp from '@pages/SignUp';
-import TrackOrder from '@pages/TrackOrder';
-import Checkout from '@pages/Checkout';
-import Admin from '@pages/Admin.tsx';
-import ProductPage from '@pages/Product';
-import { PaymentSuccess } from '@pages/Payment';
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { ToastProvider } from '@shadcn-ui/toast';
-
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./pages/App";
+import "@styles/index.scss";
+import Cart from "@pages/Cart";
+import Shop from "@pages/Shop";
+import SignIn from "@pages/SignIn";
+import SignUp from "@pages/SignUp";
+import TrackOrder from "@pages/TrackOrder";
+import Checkout from "@pages/Checkout";
+import Admin from "@pages/Admin.tsx";
+import ProductInfo from "@pages/ProductInfo";
+import { PaymentSuccess } from "@pages/Payment";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Orders from "@pages/Orders";
+import Products from "@pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -56,24 +55,29 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+    children: [
+      {
+        path: "orders",
+        element: <Orders />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+      },
+    ],
   },
   {
     path: "/product",
-    element: <ProductPage />,
+    element: <ProductInfo />,
   },
   {
     path: "/paymentsuccess",
     element: <PaymentSuccess />,
   },
-
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ToastProvider
-      duration={2}>
-      <RouterProvider router={router} />
-    </ToastProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
