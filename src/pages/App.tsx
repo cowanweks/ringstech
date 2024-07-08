@@ -58,7 +58,7 @@ export default function App() {
           >
             <div className="h-64 w-64 rounded-full">
               <img
-                src="/repairs/bk-apple-DcH7a1m0.webp"
+                src="/repairs/IMG-20240708-WA0001.jpg"
                 alt=""
                 className="h-full rounded-full bg-gray-100 object-contain"
               />
