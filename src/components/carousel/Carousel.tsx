@@ -14,14 +14,14 @@ export default function Carousel(props: {
   });
 
   return (
-    <div className="carousel h-96">
+    <div className="carousel relative max-w-full h-96 overflow-hidden">
       {props.slides.map((slide, index) => (
         <div
           key={index}
-          className={`carousel-slide ${index === currentSlide ? "active" : ""}`}
+          className={`carousel-slide h-full   ${index === currentSlide ? "block" : ""}`}
         >
-          <img src={slide.image} alt={`Slide ${index + 1}`} className="" />
-          <div className="carousel-caption z-20">
+          <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+          <div className="carousel-caption z-20 absolute bottom-[20%] left-[5%] text-white bg-[#00000080] py-[10px] px-5 rounded-[5px]">
             {slide.caption} of {props.slides.length}
           </div>
         </div>

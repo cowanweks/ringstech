@@ -1,5 +1,4 @@
 import { IProduct } from "@defines/index";
-import "@styles/ItemCard.scss";
 import { API_URL, formatPrice } from "@utils/index";
 import PropTypes, { string } from "prop-types";
 import { Link } from "react-router-dom";
@@ -8,23 +7,34 @@ const ItemCard = (props: IProduct) => {
   return (
     <Link
       to={`/product?product_id=${props.product_id}`}
-      className="product-card bg-white shadow-lg
-      overflow-hidden transition-transform transform hover:scale-105 rounded-lg
+      className="product-card max-w-[300px] bg-white shadow-lg
+      overflow-hidden transition-transform transform hover:scale-105
       w-[266px]
+      border-[1px]
+      border-white
+      rounded-[2px]
+      shadow-[0 4px 6px rgba(0,0,0,0, 0.1)]
+      m-5
       "
     >
       <div className="h-[200px]">
         <img
           src={`${API_URL}/images/?id=${props.product_image}`}
           alt="Product Image"
-          className="product-image transition-transform duration-500 hover:scale-110 w-fit max-h-full max-w-full"
+          className="
+          product-image transition-transform
+          duration-500 hover:scale-110
+          w-full
+          h-[200px]
+          object-cover
+          "
         />
       </div>
       <div className="product-details p-4">
-        <p className="product-title text-xl font-bold text-red-400 text-nowrap w-[266px] pr-4">
+        <p className="product-title text-xl font-bold text-red-600 text-nowrap w-[266px] pr-4 mb-3">
           {props.product_name?.substr(0, 30)}
         </p>
-        <p className="product-price text-lg font-bold text-green-600 mt-2">
+        <p className="product-price text-lg font-bold text-green-600 mb-2">
           {props.product_unit_price && (
             <span className="px-2 py-1 text-center">
               {formatPrice(props.product_unit_price)}

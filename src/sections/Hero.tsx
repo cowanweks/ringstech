@@ -1,4 +1,3 @@
-import "@styles/Hero.scss";
 import Carousel from "@components/carousel/Carousel";
 
 // Images

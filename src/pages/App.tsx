@@ -21,19 +21,7 @@ export default function App() {
   return (
     <div className="bg-white">
       <Header />
-      {/* <div className="flex items-center gap-x-8 px-4 h-44">
-
-        <div className="flex items-center relative w-full">
-          <button className="h-full w-12 absolute bg-transparent cursor-default">
-            <SearchIcon size={16} className="text-gray-500 mx-auto" />
-          </button>
-          <Input
-            placeholder="Search your dream item"
-            className="h-14 px-12 text-lg rounded-none"
-          />
-        </div>
-        <Button className="h-14 w-64 rounded-none bg-blue-800">Search</Button>
-      </div> */}
+      <div className="h-24"></div>
       <Hero />
       <div className="">
         <h2 className="py-8 px-12 font-semibold">TOP CATEGORIES</h2>
@@ -70,7 +58,7 @@ export default function App() {
           >
             <div className="h-64 w-64 rounded-full">
               <img
-                src="/categories/repairs.png"
+                src="/repairs/bk-apple-DcH7a1m0.webp"
                 alt=""
                 className="h-full rounded-full bg-gray-100 object-contain"
               />
